@@ -1,0 +1,1425 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="shortcut icon" href="images/gatito chiquito.svg">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      font-family: "Poppins", serif;
+
+    }
+
+    :root {
+      --animate-delay: 0.5s;
+    }
+  </style>
+
+  <title>¡Bienvenido a !</title>
+</head>
+
+<body class="overflow-hidden flex flex-row bg-zinc-900">
+
+
+  <nav id="nav-bar"
+    class="fixed flex-col gap-4 text-zinc-100 w-[16.7%] lg:w-20 bottom-0 ease-in-out duration-300 top-0 items-center pt-6 z-20 hidden bg-zinc-800 shadow-lg lg:flex group hover:w-[17%] p-4">
+      
+        <!-- Desktop -->
+    <div class="lg:flex flex-col gap-4 hidden px-10 items-center group-hover:items-start">
+      <!-- User card -->
+      <div class="flex gap-4 group-hover:w-full items-center h-16">
+        <div id="user-card" class="bg-zinc-700 h-16 group-hover:w-full justify-center rounded-md flex gap-8 items-center p-2 ">
+          <div class=" h-8 w-8 rounded-full flex justify-center items-center text-black group-hover:hidden"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8 text-zinc-200">
+            <path fill-rule="evenodd" d="M18.685 19.097A9.723 9.723 0 0021.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 003.065 7.097A9.716 9.716 0 0012 21.75a9.716 9.716 0 006.685-2.653zm-12.54-1.285A7.486 7.486 0 0112 15a7.486 7.486 0 015.855 2.812A8.224 8.224 0 0112 20.25a8.224 8.224 0 01-5.855-2.438zM15.75 9a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" clip-rule="evenodd" />
+          </svg>
+          </div>
+          <div class="group-hover:flex flex-col text-sm font-bold justify-center items-center hidden">
+            <h1 class="text-center">Nombre Apellido</h1>
+            <h2 class="client text-center hidden">Cliente</h2>
+            <h2 class="text-center admin hidden">Administrador</h2>
+          </div>
+        </div>
+      </div>
+      <!-- Inicio -->
+      <div class="flex lg:w-10 flex-col group-hover:w-full transition-all duration-300 hover:bg-zinc-700 text-black p-2 rounded-md client hidden">
+        <a class="text-sm flex items-center  gap-2" href="#home">
+          <svg class="w-5 h-5 group-hover:hidden text-zinc-100"
+            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0l-8.69 8.69a.75.75 0 001.061 1.06l8.69-8.69z" />
+            <path
+              d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z" />
+          </svg>
+          <span class="items-center hidden opacity-0 gap-4 group-hover:flex group-hover:opacity-100 transition-opacity duration-500 text-zinc-100"><svg class="w-5 h-5 text-zinc-100"
+            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0l-8.69 8.69a.75.75 0 001.061 1.06l8.69-8.69z" />
+            <path
+              d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z" />
+          </svg>Inicio</span></a>
+      </div>
+
+      
+
+      <!-- Admin Usuarios -->
+      <div class="admin flex lg:w-10 flex-col group-hover:w-full transition-all duration-300 hover:bg-zinc-700 text-black p-2 rounded-md hidden">
+        <a class="text-sm flex items-center  gap-2 text-zinc-100" href="#users">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 group-hover:hidden ">
+            <path fill-rule="evenodd" d="M8.25 6.75a3.75 3.75 0 117.5 0 3.75 3.75 0 01-7.5 0zM15.75 9.75a3 3 0 116 0 3 3 0 01-6 0zM2.25 9.75a3 3 0 116 0 3 3 0 01-6 0zM6.31 15.117A6.745 6.745 0 0112 12a6.745 6.745 0 016.709 7.498.75.75 0 01-.372.568A12.696 12.696 0 0112 21.75c-2.305 0-4.47-.612-6.337-1.684a.75.75 0 01-.372-.568 6.787 6.787 0 011.019-4.38z" clip-rule="evenodd" />
+            <path d="M5.082 14.254a8.287 8.287 0 00-1.308 5.135 9.687 9.687 0 01-1.764-.44l-.115-.04a.563.563 0 01-.373-.487l-.01-.121a3.75 3.75 0 013.57-4.047zM20.226 19.389a8.287 8.287 0 00-1.308-5.135 3.75 3.75 0 013.57 4.047l-.01.121a.563.563 0 01-.373.486l-.115.04c-.567.2-1.156.349-1.764.441z" />
+          </svg>
+          <span class="items-center hidden opacity-0 gap-4 group-hover:flex group-hover:opacity-100 transition-opacity duration-500 services-btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+            <path fill-rule="evenodd" d="M8.25 6.75a3.75 3.75 0 117.5 0 3.75 3.75 0 01-7.5 0zM15.75 9.75a3 3 0 116 0 3 3 0 01-6 0zM2.25 9.75a3 3 0 116 0 3 3 0 01-6 0zM6.31 15.117A6.745 6.745 0 0112 12a6.745 6.745 0 016.709 7.498.75.75 0 01-.372.568A12.696 12.696 0 0112 21.75c-2.305 0-4.47-.612-6.337-1.684a.75.75 0 01-.372-.568 6.787 6.787 0 011.019-4.38z" clip-rule="evenodd" />
+            <path d="M5.082 14.254a8.287 8.287 0 00-1.308 5.135 9.687 9.687 0 01-1.764-.44l-.115-.04a.563.563 0 01-.373-.487l-.01-.121a3.75 3.75 0 013.57-4.047zM20.226 19.389a8.287 8.287 0 00-1.308-5.135 3.75 3.75 0 013.57 4.047l-.01.121a.563.563 0 01-.373.486l-.115.04c-.567.2-1.156.349-1.764.441z" />
+          </svg>Usuarios</span></a>
+      </div>
+
+      <!-- Servicios -->
+      <div class="flex group-hover:w-full lg:w-10 transition-all duration-300 hover:bg-zinc-700 p-2 rounded-md gap-2 client hidden text-zinc-100">
+        <!-- <a class="text-center text-sm flex items-center justify-center gap-2" href="#services"><svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" >
+          <path d="M5.566 4.657A4.505 4.505 0 016.75 4.5h10.5c.41 0 .806.055 1.183.157A3 3 0 0015.75 3h-7.5a3 3 0 00-2.684 1.657zM2.25 12a3 3 0 013-3h13.5a3 3 0 013 3v6a3 3 0 01-3 3H5.25a3 3 0 01-3-3v-6zM5.25 7.5c-.41 0-.806.055-1.184.157A3 3 0 016.75 6h10.5a3 3 0 012.683 1.657A4.505 4.505 0 0018.75 7.5H5.25z" />
+        </svg>Servicios</a> -->
+        <svg class="w-5 h-5 group-hover:hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M5.566 4.657A4.505 4.505 0 016.75 4.5h10.5c.41 0 .806.055 1.183.157A3 3 0 0015.75 3h-7.5a3 3 0 00-2.684 1.657zM2.25 12a3 3 0 013-3h13.5a3 3 0 013 3v6a3 3 0 01-3 3H5.25a3 3 0 01-3-3v-6zM5.25 7.5c-.41 0-.806.055-1.184.157A3 3 0 016.75 6h10.5a3 3 0 012.683 1.657A4.505 4.505 0 0018.75 7.5H5.25z" />
+        </svg>
+
+        <div id="accordion-collapse" data-accordion="collapse" data-inactive-classes="text-zinc-100"
+          data-active-classes="bg-transparent" class="flex-col gap-2 hidden group-hover:flex">
+          <h2 id="accordion-collapse-heading-1">
+            <button type="button"
+              class="flex gap-2 justify-center bg-transparent focus:bg-transparent focus:text-zinc-100"
+              data-accordion-target="#accordion-collapse-body-1" aria-expanded="false"
+              aria-controls="accordion-collapse-body-1">
+              <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M5.566 4.657A4.505 4.505 0 016.75 4.5h10.5c.41 0 .806.055 1.183.157A3 3 0 0015.75 3h-7.5a3 3 0 00-2.684 1.657zM2.25 12a3 3 0 013-3h13.5a3 3 0 013 3v6a3 3 0 01-3 3H5.25a3 3 0 01-3-3v-6zM5.25 7.5c-.41 0-.806.055-1.184.157A3 3 0 016.75 6h10.5a3 3 0 012.683 1.657A4.505 4.505 0 0018.75 7.5H5.25z" />
+              </svg>
+              <span class="text-sm">Servicios</span>
+              <svg data-accordion-icon class="w-6 h-6 ease-in duration-200 shrink-0" fill="currentColor"
+                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </button>
+          </h2>
+          <div id="accordion-collapse-body-1" class="hidden" aria-labelledby="accordion-collapse-heading-1">
+            <div class="flex flex-col gap-2 text-sm">
+              <a href="#services" class="hover:bg-zinc-600 p-2 rounded-md">Diseño de redes</a>
+              <!-- <a href="#writing-service" class="hover:bg-zinc-600 p-2 rounded-md">Redacción web</a>
+              <a href="#web-page" class="hover:bg-zinc-600 p-2 rounded-md">Paginas web</a> -->
+              <a id="my-services-btn" href="#my-services" class="hover:bg-zinc-600 p-2 rounded-md client hidden">Mis servicios</a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+      <!-- Cotización -->
+      <div class="flex flex-col group-hover:w-full lg:w-10 transition-all duration-300 hover:bg-zinc-700 text-black p-2 rounded-md client hidden">
+        <a class="text-center text-sm flex items-center gap-2 text-zinc-100" href="#prices"><svg class="w-5 h-5 group-hover:hidden"
+            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path fill-rule="evenodd"
+              d="M9.315 7.584C12.195 3.883 16.695 1.5 21.75 1.5a.75.75 0 01.75.75c0 5.056-2.383 9.555-6.084 12.436A6.75 6.75 0 019.75 22.5a.75.75 0 01-.75-.75v-4.131A15.838 15.838 0 016.382 15H2.25a.75.75 0 01-.75-.75 6.75 6.75 0 017.815-6.666zM15 6.75a2.25 2.25 0 100 4.5 2.25 2.25 0 000-4.5z"
+              clip-rule="evenodd" />
+            <path
+              d="M5.26 17.242a.75.75 0 10-.897-1.203 5.243 5.243 0 00-2.05 5.022.75.75 0 00.625.627 5.243 5.243 0 005.022-2.051.75.75 0 10-1.202-.897 3.744 3.744 0 01-3.008 1.51c0-1.23.592-2.323 1.51-3.008z" />
+          </svg>
+          <span class="items-center gap-4 hidden opacity-0 group-hover:flex group-hover:opacity-100 transition-opacity duration-200"><svg class="w-5 h-5"
+            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path fill-rule="evenodd"
+              d="M9.315 7.584C12.195 3.883 16.695 1.5 21.75 1.5a.75.75 0 01.75.75c0 5.056-2.383 9.555-6.084 12.436A6.75 6.75 0 019.75 22.5a.75.75 0 01-.75-.75v-4.131A15.838 15.838 0 016.382 15H2.25a.75.75 0 01-.75-.75 6.75 6.75 0 017.815-6.666zM15 6.75a2.25 2.25 0 100 4.5 2.25 2.25 0 000-4.5z"
+              clip-rule="evenodd" />
+            <path
+              d="M5.26 17.242a.75.75 0 10-.897-1.203 5.243 5.243 0 00-2.05 5.022.75.75 0 00.625.627 5.243 5.243 0 005.022-2.051.75.75 0 10-1.202-.897 3.744 3.744 0 01-3.008 1.51c0-1.23.592-2.323 1.51-3.008z" />
+          </svg>Cotización</span>
+        </a>
+      </div>
+
+      <!-- Conversaciones -->
+      <!-- <div class="flex flex-col bg-zinc-200 text-black p-2 rounded-md w-48">
+        <a class="text-center text-sm flex items-center justify-center gap-2" href="#conversation"><svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" >
+          <path d="M4.913 2.658c2.075-.27 4.19-.408 6.337-.408 2.147 0 4.262.139 6.337.408 1.922.25 3.291 1.861 3.405 3.727a4.403 4.403 0 00-1.032-.211 50.89 50.89 0 00-8.42 0c-2.358.196-4.04 2.19-4.04 4.434v4.286a4.47 4.47 0 002.433 3.984L7.28 21.53A.75.75 0 016 21v-4.03a48.527 48.527 0 01-1.087-.128C2.905 16.58 1.5 14.833 1.5 12.862V6.638c0-1.97 1.405-3.718 3.413-3.979z" />
+          <path d="M15.75 7.5c-1.376 0-2.739.057-4.086.169C10.124 7.797 9 9.103 9 10.609v4.285c0 1.507 1.128 2.814 2.67 2.94 1.243.102 2.5.157 3.768.165l2.782 2.781a.75.75 0 001.28-.53v-2.39l.33-.026c1.542-.125 2.67-1.433 2.67-2.94v-4.286c0-1.505-1.125-2.811-2.664-2.94A49.392 49.392 0 0015.75 7.5z" />
+        </svg>
+        Conversaciones</a>
+      </div>  -->
+
+      <!-- Configuración -->
+      <div class="flex flex-col hover:bg-zinc-700 lg:w-10 group-hover:w-full transition-all duration-300 text-black p-2 rounded-md hidden text-zinc-100">
+        <a class="text-center text-sm flex items-center  gap-2" href="#home"><svg class="w-5 h-5 group-hover:hidden"
+            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path fill-rule="evenodd"
+              d="M11.078 2.25c-.917 0-1.699.663-1.85 1.567L9.05 4.889c-.02.12-.115.26-.297.348a7.493 7.493 0 00-.986.57c-.166.115-.334.126-.45.083L6.3 5.508a1.875 1.875 0 00-2.282.819l-.922 1.597a1.875 1.875 0 00.432 2.385l.84.692c.095.078.17.229.154.43a7.598 7.598 0 000 1.139c.015.2-.059.352-.153.43l-.841.692a1.875 1.875 0 00-.432 2.385l.922 1.597a1.875 1.875 0 002.282.818l1.019-.382c.115-.043.283-.031.45.082.312.214.641.405.985.57.182.088.277.228.297.35l.178 1.071c.151.904.933 1.567 1.85 1.567h1.844c.916 0 1.699-.663 1.85-1.567l.178-1.072c.02-.12.114-.26.297-.349.344-.165.673-.356.985-.57.167-.114.335-.125.45-.082l1.02.382a1.875 1.875 0 002.28-.819l.923-1.597a1.875 1.875 0 00-.432-2.385l-.84-.692c-.095-.078-.17-.229-.154-.43a7.614 7.614 0 000-1.139c-.016-.2.059-.352.153-.43l.84-.692c.708-.582.891-1.59.433-2.385l-.922-1.597a1.875 1.875 0 00-2.282-.818l-1.02.382c-.114.043-.282.031-.449-.083a7.49 7.49 0 00-.985-.57c-.183-.087-.277-.227-.297-.348l-.179-1.072a1.875 1.875 0 00-1.85-1.567h-1.843zM12 15.75a3.75 3.75 0 100-7.5 3.75 3.75 0 000 7.5z"
+              clip-rule="evenodd" />
+          </svg>
+          <span class="items-center gap-4 hidden opacity-0 group-hover:flex group-hover:opacity-100 transition-opacity duration-200"><svg class="w-5 h-5"
+            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path fill-rule="evenodd"
+              d="M11.078 2.25c-.917 0-1.699.663-1.85 1.567L9.05 4.889c-.02.12-.115.26-.297.348a7.493 7.493 0 00-.986.57c-.166.115-.334.126-.45.083L6.3 5.508a1.875 1.875 0 00-2.282.819l-.922 1.597a1.875 1.875 0 00.432 2.385l.84.692c.095.078.17.229.154.43a7.598 7.598 0 000 1.139c.015.2-.059.352-.153.43l-.841.692a1.875 1.875 0 00-.432 2.385l.922 1.597a1.875 1.875 0 002.282.818l1.019-.382c.115-.043.283-.031.45.082.312.214.641.405.985.57.182.088.277.228.297.35l.178 1.071c.151.904.933 1.567 1.85 1.567h1.844c.916 0 1.699-.663 1.85-1.567l.178-1.072c.02-.12.114-.26.297-.349.344-.165.673-.356.985-.57.167-.114.335-.125.45-.082l1.02.382a1.875 1.875 0 002.28-.819l.923-1.597a1.875 1.875 0 00-.432-2.385l-.84-.692c-.095-.078-.17-.229-.154-.43a7.614 7.614 0 000-1.139c-.016-.2.059-.352.153-.43l.84-.692c.708-.582.891-1.59.433-2.385l-.922-1.597a1.875 1.875 0 00-2.282-.818l-1.02.382c-.114.043-.282.031-.449-.083a7.49 7.49 0 00-.985-.57c-.183-.087-.277-.227-.297-.348l-.179-1.072a1.875 1.875 0 00-1.85-1.567h-1.843zM12 15.75a3.75 3.75 0 100-7.5 3.75 3.75 0 000 7.5z"
+              clip-rule="evenodd" />
+          </svg>Configuración</span></a>
+      </div>
+
+      
+    </div>
+
+    <div class="lg:flex flex-col gap-4 hidden p-2 absolute bottom-10">
+      <!-- Cerrar sesión -->
+      <div class="hover:bg-zinc-700 w-10 group-hover:w-full p-2 rounded-md transition-all duration-300">
+        <a href="" class="log-out flex gap-4 items-center justify-center text-sm  text-zinc-100"><svg class="w-5 h-5"
+            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path fill-rule="evenodd"
+              d="M7.5 3.75A1.5 1.5 0 006 5.25v13.5a1.5 1.5 0 001.5 1.5h6a1.5 1.5 0 001.5-1.5V15a.75.75 0 011.5 0v3.75a3 3 0 01-3 3h-6a3 3 0 01-3-3V5.25a3 3 0 013-3h6a3 3 0 013 3V9A.75.75 0 0115 9V5.25a1.5 1.5 0 00-1.5-1.5h-6zm5.03 4.72a.75.75 0 010 1.06l-1.72 1.72h10.94a.75.75 0 010 1.5H10.81l1.72 1.72a.75.75 0 11-1.06 1.06l-3-3a.75.75 0 010-1.06l3-3a.75.75 0 011.06 0z"
+              clip-rule="evenodd" />
+          </svg>
+          <span class="hidden group-hover:block">Cerrar Sesión</span></a>
+      </div>
+    </div>
+
+  
+
+
+
+    
+  </nav>
+
+  <nav id="mobile-nav" class="fixed w-full h-16 left-0 right-0 bottom-0 mx-auto backdrop-blur-md lg:hidden p-2 bg-zinc-700/50 z-40">
+    <div class="h-full w-full flex gap-4 items-center justify-evenly" style="font-size: 0.5rem;">
+      <!-- Home -->
+
+
+        <a href="#home" class="flex flex-col items-center justify-center client hidden text-zinc-100" >
+          <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" >
+            <path d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0l-8.69 8.69a.75.75 0 001.061 1.06l8.69-8.69z" />
+            <path d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z" />
+          </svg>
+          <p>Inicio</p>  
+        </a>
+        
+        <a href="#users" class="flex flex-col items-center justify-center admin hidden text-zinc-100" >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+            <path fill-rule="evenodd" d="M8.25 6.75a3.75 3.75 0 117.5 0 3.75 3.75 0 01-7.5 0zM15.75 9.75a3 3 0 116 0 3 3 0 01-6 0zM2.25 9.75a3 3 0 116 0 3 3 0 01-6 0zM6.31 15.117A6.745 6.745 0 0112 12a6.745 6.745 0 016.709 7.498.75.75 0 01-.372.568A12.696 12.696 0 0112 21.75c-2.305 0-4.47-.612-6.337-1.684a.75.75 0 01-.372-.568 6.787 6.787 0 011.019-4.38z" clip-rule="evenodd" />
+            <path d="M5.082 14.254a8.287 8.287 0 00-1.308 5.135 9.687 9.687 0 01-1.764-.44l-.115-.04a.563.563 0 01-.373-.487l-.01-.121a3.75 3.75 0 013.57-4.047zM20.226 19.389a8.287 8.287 0 00-1.308-5.135 3.75 3.75 0 013.57 4.047l-.01.121a.563.563 0 01-.373.486l-.115.04c-.567.2-1.156.349-1.764.441z" />
+          </svg>
+          <p>Inicio</p>  
+        </a>
+
+
+      <!-- Servicios -->
+    
+        <div id="service-btn" class="flex items-center relative group client hidden text-zinc-100" >
+          <div id="service-a" class="flex flex-col items-center justify-center">
+            <svg id="service-icon" class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path id="service-icon-path"
+                d="M5.566 4.657A4.505 4.505 0 016.75 4.5h10.5c.41 0 .806.055 1.183.157A3 3 0 0015.75 3h-7.5a3 3 0 00-2.684 1.657zM2.25 12a3 3 0 013-3h13.5a3 3 0 013 3v6a3 3 0 01-3 3H5.25a3 3 0 01-3-3v-6zM5.25 7.5c-.41 0-.806.055-1.184.157A3 3 0 016.75 6h10.5a3 3 0 012.683 1.657A4.505 4.505 0 0018.75 7.5H5.25z" />
+            </svg>
+            <div class="absolute w-96 -bottom-12 justify-center -right-44 md:-left-44 opacity-100 flex gap-2 transition-all">
+              <a href="#services" class="bg-zinc-700 rounded-md p-2">Diseño de redes</a>
+              <!-- <a href="#writing-service" class="bg-zinc-700 rounded-md p-2">Redacción web</a>
+              <a href="#web-page" class="bg-zinc-700 rounded-md p-2">Página web</a> -->
+              <a href="#my-services" id="my-services-btn" class="bg-zinc-700 rounded-md p-2">Gestionar servicios</a>
+            </div>
+            <p>Servicios</p>
+              
+          </div>      
+          <svg class="w-4 h-4 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+          </svg>
+          
+        </div>
+      
+      <!-- Cotización -->
+      
+        <a href="#prices" class="flex flex-col items-center justify-center client hidden text-zinc-100">
+          <svg class="w-5 h-5"
+            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path fill-rule="evenodd"
+              d="M9.315 7.584C12.195 3.883 16.695 1.5 21.75 1.5a.75.75 0 01.75.75c0 5.056-2.383 9.555-6.084 12.436A6.75 6.75 0 019.75 22.5a.75.75 0 01-.75-.75v-4.131A15.838 15.838 0 016.382 15H2.25a.75.75 0 01-.75-.75 6.75 6.75 0 017.815-6.666zM15 6.75a2.25 2.25 0 100 4.5 2.25 2.25 0 000-4.5z"
+              clip-rule="evenodd" />
+            <path
+              d="M5.26 17.242a.75.75 0 10-.897-1.203 5.243 5.243 0 00-2.05 5.022.75.75 0 00.625.627 5.243 5.243 0 005.022-2.051.75.75 0 10-1.202-.897 3.744 3.744 0 01-3.008 1.51c0-1.23.592-2.323 1.51-3.008z" />
+          </svg>
+        <p>Cotización</p>     
+        </a>   
+      
+      <!-- Cerrar sesión -->
+  
+        <a href="" class="log-out flex flex-col items-center justify-center text-zinc-100">
+          <svg class="w-5 h-5"
+            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path fill-rule="evenodd"
+              d="M7.5 3.75A1.5 1.5 0 006 5.25v13.5a1.5 1.5 0 001.5 1.5h6a1.5 1.5 0 001.5-1.5V15a.75.75 0 011.5 0v3.75a3 3 0 01-3 3h-6a3 3 0 01-3-3V5.25a3 3 0 013-3h6a3 3 0 013 3V9A.75.75 0 0115 9V5.25a1.5 1.5 0 00-1.5-1.5h-6zm5.03 4.72a.75.75 0 010 1.06l-1.72 1.72h10.94a.75.75 0 010 1.5H10.81l1.72 1.72a.75.75 0 11-1.06 1.06l-3-3a.75.75 0 010-1.06l3-3a.75.75 0 011.06 0z"
+              clip-rule="evenodd" />
+          </svg>
+        <p>Cerrar sesión</p>  
+        </a>      
+  
+    </div>
+  </nav>
+
+  <!-- <div id="backdrop-mobile" class="h-screen w-screen bg-black opacity-50 fixed z-10 hidden">
+  </div> -->
+
+
+  <div class="lg:block hidden w-[20%] lg:w-20">
+    
+  </div>
+
+ 
+
+  <div id="main-div" class="h-screen w-screen">
+
+    <!-- Home page -->
+
+    <div id="home" class="h-full flex items-center justify-center w-full client hidden">
+
+      <div id="default-carousel" class="relative bg-zinc-700 h-[60%] w-[80%] lg:h-[70%] lg:w-[80%] rounded-md" data-carousel="static">
+        <!-- Carousel wrapper -->
+        <div class="relative h-full overflow-hidden rounded-lg text-zinc-100">
+          <!-- Item 1 -->
+          <div class="hidden duration-700 ease-in-out flex flex-col gap-4 justify-center items-center p-4"
+            data-carousel-item>
+            <h1 class="text-xl font-bold text-center">¡Te damos la bienvenida a <span>Mariol Design</span>!</h1>
+            <h2 class="text-sm font-semibold text-zinc-300 text-center"></h2>
+          </div>
+
+          <div class="hidden duration-700 ease-in-out flex flex-col gap-4 justify-center items-center p-4"
+            data-carousel-item>
+            <h1 class="text-xl font-bold text-center">¡Te damos la bienvenida a <span>Mariol Design</span>!</h1>
+            <h2 class="text-sm font-semibold text-zinc-300 text-center">A continuación te dejamos una serie de
+              pasos<br class="lg:block hidden"> a seguir para que comiences a disfrutar de nuestros servicios</h2>
+          </div>
+          
+        </div>
+        <!-- Slider indicators -->
+        <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2 ">
+          <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1"
+            data-carousel-slide-to="0"></button>
+          
+        </div>
+        <!-- Slider controls -->
+        <button type="button"
+          class="absolute bottom-2 left-0 z-30 flex items-center justify-center h-10 w-16 px-4 cursor-pointer group hover:bg-none focus:outline-none lg:hidden"
+          data-carousel-prev>
+          <span
+            class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-gray-300/30 group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-gray-800/70 group-focus:outline-none">
+            <svg aria-hidden="true" class="w-5 h-5 sm:w-6 sm:h-6 text-gray-800" fill="none"
+              stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+            <span class="sr-only">Previous</span>
+          </span>
+        </button>
+        <button type="button"
+          class="absolute bottom-2 right-0 z-30 flex items-center justify-center h-10 w-16 px-4 cursor-pointer group focus:outline-none lg:hidden bg-zinc-700"
+          data-carousel-next>
+          <span
+            class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-gray-300/30 group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-gray-800/70 group-focus:outline-none">
+            <svg aria-hidden="true" class="w-5 h-5 sm:w-6 sm:h-6 text-gray-800" fill="none"
+              stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+            <span class="sr-only">Next</span>
+          </span>
+        </button>
+      </div>
+
+
+    </div>
+
+    <!-- Users admin -->
+
+    <div class="admin h-full flex flex-col hidden">
+
+
+      <div id="users" class="h-full flex flex-col items-center p-4 gap-12 text-zinc-100">
+
+        <h1 class="lg:text-2xl font-bold">Tabla de usuarios</h1>
+        <!-- Grid father -->
+        <table class="table-auto h-auto w-full flex flex-col md:items-center snap-center flex-none overflow-x-auto">
+
+          <thead class="md:w-[45rem] lg:w-[60rem] lg:text-base text-sm w-[50rem] flex-none">
+            <tr class="flex justify-between text-center border-b border-slate-500 sm:text-base text-sm">
+
+              <th class="border-r border-slate-500 w-full">Nombre</th>
+              <th class="border-r border-slate-500 w-full">Email</th>
+              <th class="border-r border-slate-500 w-full">Número de tlf.</th>
+              <th class="border-slate-500 w-full">Opciones</th>
+
+            </tr>
+          </thead>
+
+          <tbody id="users-container" class="md:w-[45rem] lg:w-[60rem] lg:text-base text-sm w-[50rem]">
+
+            <!-- <tr class="flex justify-between py-2 border-b border-slate-900/20 items-center">
+              <td class="w-full border-slate-900/20 px-2">Emmanuel R</td>
+              <td class="w-full border-slate-900/20 px-2">emmanuelrequena335@gmail.com</td>
+              <td class="w-full border-slate-900/20 px-2">424-1507257</td>
+              <td class="w-full border-slate-900/20 px-2 flex items-center justify-center gap-2">
+                <button class="p-1 rounded-md bg-blue-300 font-bold brief-btn">Briefings</button>
+                <button class="p-1 rounded-md bg-green-300 font-bold request-btn">Solicitudes</button>
+              </td>
+            </tr>
+
+            <tr class="flex justify-between py-2 border-b border-slate-900/20 items-center">
+              <td class="w-full border-slate-900/20 px-2">Emmanuel R</td>
+              <td class="w-full border-slate-900/20 px-2">emmanuelrequena335@gmail.com</td>
+              <td class="w-full border-slate-900/20 px-2">424-1507257</td>
+              <td class="w-full border-slate-900/20 px-2 flex items-center justify-center gap-2">
+                <button class="p-1 rounded-md bg-blue-300 font-bold ">Briefings</button>
+                <button class="p-1 rounded-md bg-green-300 font-bold ">Solicitudes</button>
+              </td>
+            </tr> -->
+          </tbody>
+          <!-- <li class="bg-zinc-100 h-[125%] text-center text-base md:text-sm lg:text-base flex flex-col justify-center py-4 rounded-md p-4 shadow-md gap-2">
+            <p>Antonio José de Sucre Blanco</p>
+            <p>424-1501232<p>
+            <p>ejemploejemplificado@ejemplo.com</p>
+
+            <div class="flex items-center justify-center gap-4">
+              <button class="bg-blue-400 hover:bg-blue-300 p-1 rounded-md font-bold text-white">Briefings</button>
+              <button class="bg-green-400 hover:bg-green-300 p-1 rounded-md font-bold text-white">Solicitudes</button>
+            </div>
+          </li> -->
+
+        </table>
+          
+  
+      </div>
+
+
+
+    </div>
+
+    <!-- Brief admin -->
+
+    <div class="admin h-full hidden">
+      <div id="brief-admin" class="h-full lg:flex flex-col gap-8 items-center overflow-scroll p-8 ">
+        <h1 class="text-center font-bold text-xl">Briefings</h1>
+        <!-- Grid father -->
+        <ul id="briefs-container" class="h-auto w-full p-4 md:p-16 grid md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-none grid-rows-4 gap-8 md:gap-6 md:gap-y-14 overflow-auto">
+
+          <!-- <li class="bg-zinc-100 h-[125%] text-center text-base md:text-sm lg:text-base flex flex-col justify-center py-4 rounded-md p-4 shadow-md">
+            <p>Servicio: Diseño de redes</p>
+            <p>Paquete: Básico<p>
+            <p>Estado: <span class="text-green-400 font-bold">Aprobado</span></p>
+          </li> -->
+
+
+        </ul>
+          
+
+      
+          
+        </div>
+  
+    </div>
+
+    <!-- Request admin -->
+
+    <div class="admin h-full hidden">
+      <div id="request-admin" class="h-full lg:flex flex-col gap-8 items-center overflow-scroll p-8 ">
+        <h1 class="text-center font-bold text-xl">Solicitudes</h1>
+        <!-- Grid father -->
+        <ul id="request-container" class="h-auto w-full p-4 md:p-16 grid lg:grid-cols-3 md:grid-cols-2 lg:grid-rows-none grid-rows-4 gap-8 md:gap-6 md:gap-y-10 overflow-auto ">
+
+          <!-- <li class="bg-zinc-100 h-[125%] text-center text-base md:text-sm lg:text-base flex flex-col justify-center py-4 rounded-md p-4 shadow-md">
+            <p>Servicio: Diseño de redes</p>
+            <p>Paquete: Básico<p>
+            <p>Estado: <span class="text-green-400 font-bold">Aprobado</span></p>
+          </li> -->
+
+          <!-- <li class="bg-zinc-100 h-[125%] text-center text-base md:text-sm lg:text-base flex flex-col justify-center py-4 rounded-md p-4 shadow-md gap-2">
+            <p>Tipo de servicio: ${data.typeOfService}</p>
+            <p>Paquete: ${data.pack}<p>
+            <p>Referencia de pago: ${data.payRef}</p>
+            <p>Método de pago: ${data.method}</p>
+            <p>Estado: <span class="text-red-500 font-bold">No aprobado</span></p>
+
+            <div class="flex items-center justify-center gap-4">
+              <button id="disapprove" class="bg-orange-400 hover:bg-orange-300 p-1 rounded-md font-bold hidden">Desaprobar</button>
+              <button id="approve" class="bg-green-400 hover:bg-green-300 p-1 rounded-md font-bold ">Aprobar</button>
+              <button id="reject" class="bg-red-500 hover:bg-red-400 p-1 rounded-md font-bold text-zinc-100">Rechazar</button>
+            </div>
+          </li> -->
+
+        </ul>
+        
+        </div>
+  
+    </div>
+  
+
+
+    <div id="services" class="h-full w-full p-2 flex flex-col  items-center pb-16 lg:pb-8 client hidden">
+
+      <div class="h-auto w-full p-4 md:p-8 lg:p-10 grid md:grid-cols-2 md:grid-rows-none lg:grid-cols-2  lg:grid-rows-none grid-rows-none gap-4 md:gap-y-10 overflow-auto place-items-center relative ">
+        <!-- <div class="h-full w-52 bg-blue-500 rounded-br-full rounded-tr-full flex items-center justify-center">
+          <h1 class="font-bold text-zinc-100 text-xl">Diseño de redes</h1>
+        </div> -->
+
+        <!-- Paquete 1 -->
+
+        <div class="h-[36rem] w-[20rem] md:w-[20rem] lg:w-[25rem] group bg-zinc-100  drop-shadow-md flex flex-col gap-2 relative rounded-md">
+
+          <div class="bg-gradient-to-r from-blue-700 to-blue-300 h-[30%] w-full rounded-t-md p-8 text-white flex flex-col justify-center gap-2">
+              <input type="text" value="Comienza tu proyecto con nuestro" class="hidden lg:block bg-transparent w-72 outline-none edit-input" readonly>
+              <input type="text" value="Paquete Básico" class="text-3xl font-bold bg-transparent w-60 outline-none edit-input" readonly>
+              <input type="text" value="Sólo por 30$" class="bg-transparent text-lg outline-none edit-input" readonly>  
+          </div>
+
+          <div class="p-8 flex flex-col gap-4">
+            <h1 class="text-lg font-bold">Nuestro paquete básico incluye: </h1>
+
+            <div class="text-sm flex flex-col gap-2 w-full">
+              <div class="w-full flex items-center justify-between">
+                <input type="text" value="12 imágenes para tus redes sociales" class="bg-transparent outline-none w-full edit-input" readonly>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 delete-btn hidden text-red-500 hover:text-red-400">
+                  <path fill-rule="evenodd" d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z" clip-rule="evenodd" />
+                </svg>
+                
+              </div>
+              <div class="w-full flex items-center justify-between">
+                <input type="text" value="Increíble diseño de portada" class="bg-transparent outline-none w-full edit-input" readonly>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 delete-btn hidden text-red-500 hover:text-red-400">
+                  <path fill-rule="evenodd" d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z" clip-rule="evenodd" />
+                </svg>
+                
+              </div>
+              <div class="w-full flex items-center justify-between">
+                <input type="text" value="Historias destacadas para tu perfil" class="bg-transparent outline-none w-full edit-input" readonly>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 delete-btn hidden text-red-500 hover:text-red-400">
+                  <path fill-rule="evenodd" d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z" clip-rule="evenodd" />
+                </svg>
+                
+              </div>
+            </div>
+
+            <h2 class="font-bold">Además, como obsequio: </h2>
+
+            <div class="text-sm flex items-center justify-between">
+              <textarea value="Te potenciamos el perfil con ads (sólo para Instagram)" class="bg-transparent outline-none w-full appearance-none caret-transparent resize-none edit-input" readonly>Te potenciamos el perfil con ads (sólo para Instagram)</textarea> 
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 delete-btn hidden text-red-500 hover:text-red-400">
+                <path fill-rule="evenodd" d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z" clip-rule="evenodd" />
+              </svg>
+            </div>
+
+            <button class="bg-gradient-to-r from-blue-700 to-blue-300 hover:from-blue-600 hover:to-blue-200 ease-in-out duration-300 hover:scale-105 p-2 text-white rounded-md font-bold purchase-btn">Adquirir</button>
+            
+          </div>
+
+          
+
+          
+          <!-- <div class="flex justify-between font-bold">
+            <h1 class="text-lg lg:text-xl text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">Paquete básico</h1>
+            <p class="text-2xl lg:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">35$</p>
+          </div>
+
+          <div class="flex flex-col lg:gap-2 text-sm lg:text-base">
+            <p class="text-base lg:text-lg font-bold">
+              ¿Qué incluye?
+            </p>
+            <p class="flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-green-400 stroke-black">
+              <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
+            </svg>
+            12 imagenes
+          </p>
+            <p class="items-center flex">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-green-400 stroke-black">
+                <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
+              </svg>
+            Portada
+          </p>
+
+            <p class="hidden md:flex group-hover:flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-green-400 stroke-black">
+                <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
+              </svg>
+            Historias destacadas
+          </p>
+
+            <p class="hidden md:flex lg:flex group-hover:flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-green-400 stroke-black">
+                <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
+              </svg>Potenciar perfil IG
+            </p>
+          </div>
+          <button class="group-hover:hidden md:hidden lg:hidden bg-zinc-300/70 p-1 rounded-md text-sm absolute bottom-2 font-bold">¡Cliquea y lee más!</button> -->
+        </div>
+
+        <!-- Paquete 2 -->
+
+
+        <div class="h-[36rem] w-[20rem] md:w-[20rem] lg:w-[25rem] group bg-zinc-100  drop-shadow-md flex flex-col gap-2 relative rounded-md">
+
+          <div class="bg-gradient-to-r from-purple-600 to-purple-300 h-[30%] w-full rounded-t-md p-8 text-white flex flex-col justify-center gap-2">
+              <input type="text" value="Tu perfil será más profesional con nuestro" class="hidden lg:block bg-transparent w-[21rem] outline-none edit-input" readonly>
+              <input type="text" value="Paquete Mediano" class="text-3xl font-bold bg-transparent w-[17rem] outline-none edit-input" readonly>
+              <input type="text" value="Sólo por 55$" class="bg-transparent text-lg outline-none edit-input" readonly>
+          </div>
+
+          <div class="p-8 flex flex-col gap-4">
+            <h1 class="text-lg font-bold">Nuestro paquete mediano incluye: </h1>
+
+            <div class="text-sm flex flex-col gap-2 w-full">
+              <div class="w-full flex items-center justify-between">
+                <input type="text" value="24 imágenes para tus redes sociales" class="bg-transparent outline-none w-full edit-input" readonly>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 delete-btn hidden text-red-500 hover:text-red-400">
+                  <path fill-rule="evenodd" d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z" clip-rule="evenodd" />
+                </svg>
+                
+              </div>
+
+              <div class="w-full flex items-center justify-between">
+                <input type="text" value="5 stories para tu perfil" class="bg-transparent outline-none w-full edit-input" readonly>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 delete-btn hidden text-red-500 hover:text-red-400">
+                  <path fill-rule="evenodd" d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z" clip-rule="evenodd" />
+                </svg>
+                
+              </div>
+              <div class="w-full flex items-center justify-between">
+                <input type="text" value="Increíble diseño de portada" class="bg-transparent outline-none w-full edit-input" readonly>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 delete-btn hidden text-red-500 hover:text-red-400">
+                  <path fill-rule="evenodd" d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z" clip-rule="evenodd" />
+                </svg>
+                
+              </div>
+              <div class="w-full flex items-center justify-between">
+                <input type="text" value="Historias destacadas para tu perfil" class="bg-transparent outline-none w-full edit-input" readonly>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 delete-btn hidden text-red-500 hover:text-red-400">
+                  <path fill-rule="evenodd" d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z" clip-rule="evenodd" />
+                </svg>
+                
+              </div>
+            </div>
+
+            <h2 class="font-bold">Además, como obsequio: </h2>
+
+            <div class="text-sm flex items-center justify-between">
+              <textarea value="Te potenciamos el perfil con ads (sólo para Instagram)" class="bg-transparent outline-none w-full appearance-none caret-transparent resize-none edit-input" readonly>Te potenciamos el perfil con ads (sólo para Instagram)</textarea> 
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 delete-btn hidden text-red-500 hover:text-red-400">
+                <path fill-rule="evenodd" d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <button class="bg-gradient-to-r from-purple-600 to-purple-300 hover:from-purple-500 hover:to-purple-200 ease-in-out duration-300 hover:scale-105 p-2 text-white rounded-md font-bold purchase-btn">Adquirir</button>
+          </div>
+
+          <div class="absolute bg-white h-5 lg:w-32 md:text-xs flex items-center p-2 lg:text-sm text-center top-28 lg:top-32 right-0 rounded-l-md">Recomendada</div>
+
+          
+
+          <!-- <div class="flex justify-between font-bold">
+            <h1 class="text-lg lg:text-xl text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">Paquete básico</h1>
+            <p class="text-2xl lg:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">35$</p>
+          </div>
+
+          <div class="flex flex-col lg:gap-2 text-sm lg:text-base">
+            <p class="text-base lg:text-lg font-bold">
+              ¿Qué incluye?
+            </p>
+            <p class="flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-green-400 stroke-black">
+              <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
+            </svg>
+            12 imagenes
+          </p>
+            <p class="items-center flex">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-green-400 stroke-black">
+                <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
+              </svg>
+            Portada
+          </p>
+
+            <p class="hidden md:flex group-hover:flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-green-400 stroke-black">
+                <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
+              </svg>
+            Historias destacadas
+          </p>
+
+            <p class="hidden md:flex lg:flex group-hover:flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-green-400 stroke-black">
+                <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
+              </svg>Potenciar perfil IG
+            </p>
+          </div>
+          <button class="group-hover:hidden md:hidden lg:hidden bg-zinc-300/70 p-1 rounded-md text-sm absolute bottom-2 font-bold">¡Cliquea y lee más!</button> -->
+        </div>
+
+        <!-- Paquete 3 -->
+
+
+        <div class="h-[36rem] w-[20rem] md:w-[20rem] lg:w-[25rem] group bg-zinc-100  drop-shadow-md flex flex-col gap-2 relative rounded-md">
+
+          <div class="bg-gradient-to-r from-orange-500 to-amber-300 h-[30%] w-full rounded-t-md p-8 text-white flex flex-col justify-center gap-2">
+              <input type="text" value="Avanza al siguiente nivel con nuestro" class="hidden lg:block bg-transparent w-[21rem] outline-none edit-input" readonly>
+              <input type="text" value="Paquete Premium" class="text-3xl font-bold bg-transparent w-[17rem] outline-none edit-input" readonly>
+              <input type="text" value="Sólo por 80$" class="bg-transparent text-lg outline-none edit-input" readonly>
+          </div>
+
+          <div class="p-8 flex flex-col gap-4">
+            <h1 class="text-lg font-bold">Nuestro paquete premium incluye: </h1>
+
+            <div class="text-sm flex flex-col gap-2 w-full">
+              <div class="w-full flex items-center justify-between">
+                <input type="text" value="24 imágenes para tus redes sociales" class="bg-transparent outline-none w-full edit-input" readonly>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 delete-btn hidden text-red-500 hover:text-red-400">
+                  <path fill-rule="evenodd" d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z" clip-rule="evenodd" />
+                </svg>
+                
+              </div>
+
+              <div class="w-full flex items-center justify-between">
+                <input type="text" value="12 stories para tu perfil" class="bg-transparent outline-none w-full edit-input" readonly>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 delete-btn hidden text-red-500 hover:text-red-400">
+                  <path fill-rule="evenodd" d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z" clip-rule="evenodd" />
+                </svg>
+                
+              </div>
+              <div class="w-full flex items-center justify-between">
+                <input type="text" value="Increíble diseño de portada" class="bg-transparent outline-none w-full edit-input" readonly>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 delete-btn hidden text-red-500 hover:text-red-400">
+                  <path fill-rule="evenodd" d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z" clip-rule="evenodd" />
+                </svg>
+                
+              </div>
+              <div class="w-full flex items-center justify-between">
+                <input type="text" value="Historias destacadas para tu perfil" class="bg-transparent outline-none w-full edit-input" readonly>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 delete-btn hidden text-red-500 hover:text-red-400">
+                  <path fill-rule="evenodd" d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z" clip-rule="evenodd" />
+                </svg>
+                
+              </div>
+            </div>
+
+            <h2 class="font-bold">Además, como obsequio: </h2>
+
+            <div class="text-sm flex items-center justify-between">
+              <textarea value="Te potenciamos el perfil con ads (sólo para Instagram)" class="bg-transparent outline-none w-full appearance-none caret-transparent resize-none edit-input" readonly>Te potenciamos el perfil con ads (sólo para Instagram)</textarea> 
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 delete-btn hidden text-red-500 hover:text-red-400">
+                <path fill-rule="evenodd" d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z" clip-rule="evenodd" />
+              </svg>
+            </div>
+
+            <button class="bg-gradient-to-r from-orange-500 to-amber-300 hover:from-orange-400 hover:to-amber-200 ease-in-out duration-300 hover:scale-105 p-2 text-white rounded-md font-bold purchase-btn">Adquirir</button>
+
+          </div>
+
+          
+        </div>
+
+        
+
+        
+        
+
+        
+
+        <!-- <button class="absolute bottom-5 bg-zinc-100 flex lg:right-20 lg:top-8 lg:bottom-auto hover:bg-zinc-300 p-1 rounded-md items-center purchase-btn">Ir a comprar <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+          <path fill-rule="evenodd" d="M3.75 12a.75.75 0 01.75-.75h13.19l-5.47-5.47a.75.75 0 011.06-1.06l6.75 6.75a.75.75 0 010 1.06l-6.75 6.75a.75.75 0 11-1.06-1.06l5.47-5.47H4.5a.75.75 0 01-.75-.75z" clip-rule="evenodd" />
+        </svg>
+        </button> -->
+        
+      </div>
+        
+
+        
+        
+
+
+
+        
+    </div>
+      <!-- CARRUSEL -->
+
+       
+    <!-- Mis servicios -->
+
+    
+    
+
+    <div id="writing-service" class="h-full w-full p-2 flex flex-col  items-center pb-16 lg:pb-8 hidden">
+
+      <div class="h-auto w-full p-4 md:p-8 lg:p-10 grid md:grid-cols-2 md:grid-rows-none lg:grid-cols-2  lg:grid-rows-none grid-rows-none gap-4 md:gap-y-10 overflow-auto place-items-center relative ">
+        <!-- <div class="h-full w-52 bg-blue-500 rounded-br-full rounded-tr-full flex items-center justify-center">
+          <h1 class="font-bold text-zinc-100 text-xl">Diseño de redes</h1>
+        </div> -->
+
+        <!-- Paquete 1 -->
+
+        <div class="h-[36rem] w-[20rem] md:w-[20rem] lg:w-[25rem] group bg-zinc-100  drop-shadow-md flex flex-col gap-2 relative rounded-md">
+
+          <div class="bg-gradient-to-r from-blue-700 to-blue-300 h-[30%] w-full rounded-t-md p-8 text-white flex flex-col justify-center gap-2">
+              <input type="text" value="Comienza tu proyecto con nuestro" class="hidden lg:block bg-transparent w-72 outline-none edit-input" readonly>
+              <input type="text" value="Paquete Básico" class="text-3xl font-bold bg-transparent w-60 outline-none edit-input" readonly>
+              <input type="text" value="Sólo por 30$" class="bg-transparent text-lg outline-none edit-input" readonly>  
+          </div>
+
+          <div class="p-8 flex flex-col gap-4">
+            <h1 class="text-lg font-bold">Nuestro paquete básico incluye: </h1>
+
+            <div class="text-sm flex flex-col gap-2 w-full">
+              <div class="w-full flex items-center justify-between">
+                <input type="text" value="12 imágenes para tus redes sociales" class="bg-transparent outline-none w-full edit-input" readonly>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 delete-btn hidden text-red-500 hover:text-red-400">
+                  <path fill-rule="evenodd" d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z" clip-rule="evenodd" />
+                </svg>
+                
+              </div>
+              <div class="w-full flex items-center justify-between">
+                <input type="text" value="Increíble diseño de portada" class="bg-transparent outline-none w-full edit-input" readonly>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 delete-btn hidden text-red-500 hover:text-red-400">
+                  <path fill-rule="evenodd" d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z" clip-rule="evenodd" />
+                </svg>
+                
+              </div>
+              <div class="w-full flex items-center justify-between">
+                <input type="text" value="Historias destacadas para tu perfil" class="bg-transparent outline-none w-full edit-input" readonly>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 delete-btn hidden text-red-500 hover:text-red-400">
+                  <path fill-rule="evenodd" d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z" clip-rule="evenodd" />
+                </svg>
+                
+              </div>
+            </div>
+
+            <h2 class="font-bold">Además, como obsequio: </h2>
+
+            <div class="text-sm flex items-center justify-between">
+              <textarea value="Te potenciamos el perfil con ads (sólo para Instagram)" class="bg-transparent outline-none w-full appearance-none caret-transparent resize-none edit-input" readonly>Te potenciamos el perfil con ads (sólo para Instagram)</textarea> 
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 delete-btn hidden text-red-500 hover:text-red-400">
+                <path fill-rule="evenodd" d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z" clip-rule="evenodd" />
+              </svg>
+            </div>
+
+            <button class="bg-gradient-to-r from-blue-700 to-blue-300 hover:from-blue-600 hover:to-blue-200 ease-in-out duration-300 hover:scale-105 p-2 text-white rounded-md font-bold purchase-btn">Adquirir</button>
+            
+          </div>
+
+          
+
+          
+          <!-- <div class="flex justify-between font-bold">
+            <h1 class="text-lg lg:text-xl text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">Paquete básico</h1>
+            <p class="text-2xl lg:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">35$</p>
+          </div>
+
+          <div class="flex flex-col lg:gap-2 text-sm lg:text-base">
+            <p class="text-base lg:text-lg font-bold">
+              ¿Qué incluye?
+            </p>
+            <p class="flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-green-400 stroke-black">
+              <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
+            </svg>
+            12 imagenes
+          </p>
+            <p class="items-center flex">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-green-400 stroke-black">
+                <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
+              </svg>
+            Portada
+          </p>
+
+            <p class="hidden md:flex group-hover:flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-green-400 stroke-black">
+                <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
+              </svg>
+            Historias destacadas
+          </p>
+
+            <p class="hidden md:flex lg:flex group-hover:flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-green-400 stroke-black">
+                <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
+              </svg>Potenciar perfil IG
+            </p>
+          </div>
+          <button class="group-hover:hidden md:hidden lg:hidden bg-zinc-300/70 p-1 rounded-md text-sm absolute bottom-2 font-bold">¡Cliquea y lee más!</button> -->
+        </div>
+
+        <!-- Paquete 2 -->
+
+
+        <div class="h-[36rem] w-[20rem] md:w-[20rem] lg:w-[25rem] group bg-zinc-100  drop-shadow-md flex flex-col gap-2 relative rounded-md">
+
+          <div class="bg-gradient-to-r from-purple-600 to-purple-300 h-[30%] w-full rounded-t-md p-8 text-white flex flex-col justify-center gap-2">
+              <input type="text" value="Tu perfil será más profesional con nuestro" class="hidden lg:block bg-transparent w-[21rem] outline-none edit-input" readonly>
+              <input type="text" value="Paquete Mediano" class="text-3xl font-bold bg-transparent w-[17rem] outline-none edit-input" readonly>
+              <input type="text" value="Sólo por 55$" class="bg-transparent text-lg outline-none edit-input" readonly>
+          </div>
+
+          <div class="p-8 flex flex-col gap-4">
+            <h1 class="text-lg font-bold">Nuestro paquete mediano incluye: </h1>
+
+            <div class="text-sm flex flex-col gap-2 w-full">
+              <div class="w-full flex items-center justify-between">
+                <input type="text" value="24 imágenes para tus redes sociales" class="bg-transparent outline-none w-full edit-input" readonly>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 delete-btn hidden text-red-500 hover:text-red-400">
+                  <path fill-rule="evenodd" d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z" clip-rule="evenodd" />
+                </svg>
+                
+              </div>
+
+              <div class="w-full flex items-center justify-between">
+                <input type="text" value="5 stories para tu perfil" class="bg-transparent outline-none w-full edit-input" readonly>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 delete-btn hidden text-red-500 hover:text-red-400">
+                  <path fill-rule="evenodd" d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z" clip-rule="evenodd" />
+                </svg>
+                
+              </div>
+              <div class="w-full flex items-center justify-between">
+                <input type="text" value="Increíble diseño de portada" class="bg-transparent outline-none w-full edit-input" readonly>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 delete-btn hidden text-red-500 hover:text-red-400">
+                  <path fill-rule="evenodd" d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z" clip-rule="evenodd" />
+                </svg>
+                
+              </div>
+              <div class="w-full flex items-center justify-between">
+                <input type="text" value="Historias destacadas para tu perfil" class="bg-transparent outline-none w-full edit-input" readonly>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 delete-btn hidden text-red-500 hover:text-red-400">
+                  <path fill-rule="evenodd" d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z" clip-rule="evenodd" />
+                </svg>
+                
+              </div>
+            </div>
+
+            <h2 class="font-bold">Además, como obsequio: </h2>
+
+            <div class="text-sm flex items-center justify-between">
+              <textarea value="Te potenciamos el perfil con ads (sólo para Instagram)" class="bg-transparent outline-none w-full appearance-none caret-transparent resize-none edit-input" readonly>Te potenciamos el perfil con ads (sólo para Instagram)</textarea> 
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 delete-btn hidden text-red-500 hover:text-red-400">
+                <path fill-rule="evenodd" d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <button class="bg-gradient-to-r from-purple-600 to-purple-300 hover:from-purple-500 hover:to-purple-200 ease-in-out duration-300 hover:scale-105 p-2 text-white rounded-md font-bold purchase-btn">Adquirir</button>
+          </div>
+
+          <div class="absolute bg-white h-5 lg:w-32 md:text-xs flex items-center p-2 lg:text-sm text-center top-28 lg:top-32 right-0 rounded-l-md">Recomendada</div>
+
+          
+
+          <!-- <div class="flex justify-between font-bold">
+            <h1 class="text-lg lg:text-xl text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">Paquete básico</h1>
+            <p class="text-2xl lg:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">35$</p>
+          </div>
+
+          <div class="flex flex-col lg:gap-2 text-sm lg:text-base">
+            <p class="text-base lg:text-lg font-bold">
+              ¿Qué incluye?
+            </p>
+            <p class="flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-green-400 stroke-black">
+              <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
+            </svg>
+            12 imagenes
+          </p>
+            <p class="items-center flex">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-green-400 stroke-black">
+                <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
+              </svg>
+            Portada
+          </p>
+
+            <p class="hidden md:flex group-hover:flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-green-400 stroke-black">
+                <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
+              </svg>
+            Historias destacadas
+          </p>
+
+            <p class="hidden md:flex lg:flex group-hover:flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-green-400 stroke-black">
+                <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
+              </svg>Potenciar perfil IG
+            </p>
+          </div>
+          <button class="group-hover:hidden md:hidden lg:hidden bg-zinc-300/70 p-1 rounded-md text-sm absolute bottom-2 font-bold">¡Cliquea y lee más!</button> -->
+        </div>
+
+        <!-- Paquete 3 -->
+
+
+        <div class="h-[36rem] w-[20rem] md:w-[20rem] lg:w-[25rem] group bg-zinc-100  drop-shadow-md flex flex-col gap-2 relative rounded-md">
+
+          <div class="bg-gradient-to-r from-orange-500 to-amber-300 h-[30%] w-full rounded-t-md p-8 text-white flex flex-col justify-center gap-2">
+              <input type="text" value="Avanza al siguiente nivel con nuestro" class="hidden lg:block bg-transparent w-[21rem] outline-none edit-input" readonly>
+              <input type="text" value="Paquete Premium" class="text-3xl font-bold bg-transparent w-[17rem] outline-none edit-input" readonly>
+              <input type="text" value="Sólo por 80$" class="bg-transparent text-lg outline-none edit-input" readonly>
+          </div>
+
+          <div class="p-8 flex flex-col gap-4">
+            <h1 class="text-lg font-bold">Nuestro paquete premium incluye: </h1>
+
+            <div class="text-sm flex flex-col gap-2 w-full">
+              <div class="w-full flex items-center justify-between">
+                <input type="text" value="24 imágenes para tus redes sociales" class="bg-transparent outline-none w-full edit-input" readonly>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 delete-btn hidden text-red-500 hover:text-red-400">
+                  <path fill-rule="evenodd" d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z" clip-rule="evenodd" />
+                </svg>
+                
+              </div>
+
+              <div class="w-full flex items-center justify-between">
+                <input type="text" value="12 stories para tu perfil" class="bg-transparent outline-none w-full edit-input" readonly>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 delete-btn hidden text-red-500 hover:text-red-400">
+                  <path fill-rule="evenodd" d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z" clip-rule="evenodd" />
+                </svg>
+                
+              </div>
+              <div class="w-full flex items-center justify-between">
+                <input type="text" value="Increíble diseño de portada" class="bg-transparent outline-none w-full edit-input" readonly>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 delete-btn hidden text-red-500 hover:text-red-400">
+                  <path fill-rule="evenodd" d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z" clip-rule="evenodd" />
+                </svg>
+                
+              </div>
+              <div class="w-full flex items-center justify-between">
+                <input type="text" value="Historias destacadas para tu perfil" class="bg-transparent outline-none w-full edit-input" readonly>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 delete-btn hidden text-red-500 hover:text-red-400">
+                  <path fill-rule="evenodd" d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z" clip-rule="evenodd" />
+                </svg>
+                
+              </div>
+            </div>
+
+            <h2 class="font-bold">Además, como obsequio: </h2>
+
+            <div class="text-sm flex items-center justify-between">
+              <textarea value="Te potenciamos el perfil con ads (sólo para Instagram)" class="bg-transparent outline-none w-full appearance-none caret-transparent resize-none edit-input" readonly>Te potenciamos el perfil con ads (sólo para Instagram)</textarea> 
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 delete-btn hidden text-red-500 hover:text-red-400">
+                <path fill-rule="evenodd" d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z" clip-rule="evenodd" />
+              </svg>
+            </div>
+
+            <button class="bg-gradient-to-r from-orange-500 to-amber-300 hover:from-orange-400 hover:to-amber-200 ease-in-out duration-300 hover:scale-105 p-2 text-white rounded-md font-bold purchase-btn">Adquirir</button>
+
+          </div>
+
+          
+        </div>
+
+        
+
+        
+        
+
+        
+
+        <!-- <button class="absolute bottom-5 bg-zinc-100 flex lg:right-20 lg:top-8 lg:bottom-auto hover:bg-zinc-300 p-1 rounded-md items-center purchase-btn">Ir a comprar <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+          <path fill-rule="evenodd" d="M3.75 12a.75.75 0 01.75-.75h13.19l-5.47-5.47a.75.75 0 011.06-1.06l6.75 6.75a.75.75 0 010 1.06l-6.75 6.75a.75.75 0 11-1.06-1.06l5.47-5.47H4.5a.75.75 0 01-.75-.75z" clip-rule="evenodd" />
+        </svg>
+        </button> -->
+        
+      </div>
+        
+
+        
+        
+
+
+
+        
+    </div>
+
+    <div id="web-page" class="h-full w-full p-2 flex flex-col  items-center pb-16 lg:pb-8 hidden">
+
+      <div class="h-auto w-full p-4 md:p-8 lg:p-10 grid md:grid-cols-2 md:grid-rows-none lg:grid-cols-2  lg:grid-rows-none grid-rows-none gap-4 md:gap-y-10 overflow-auto place-items-center relative ">
+        <!-- <div class="h-full w-52 bg-blue-500 rounded-br-full rounded-tr-full flex items-center justify-center">
+          <h1 class="font-bold text-zinc-100 text-xl">Diseño de redes</h1>
+        </div> -->
+
+        <!-- Paquete 1 -->
+
+        <div class="h-[36rem] w-[20rem] md:w-[20rem] lg:w-[25rem] group bg-zinc-100  drop-shadow-md flex flex-col gap-2 relative rounded-md">
+
+          <div class="bg-gradient-to-r from-blue-700 to-blue-300 h-[30%] w-full rounded-t-md p-8 text-white flex flex-col justify-center gap-2">
+              <input type="text" value="Comienza tu proyecto con nuestro" class="hidden lg:block bg-transparent w-72 outline-none edit-input" readonly>
+              <input type="text" value="Paquete Básico" class="text-3xl font-bold bg-transparent w-60 outline-none edit-input" readonly>
+              <input type="text" value="Sólo por 30$" class="bg-transparent text-lg outline-none edit-input" readonly>  
+          </div>
+
+          <div class="p-8 flex flex-col gap-4">
+            <h1 class="text-lg font-bold">Nuestro paquete básico incluye: </h1>
+
+            <div class="text-sm flex flex-col gap-2 w-full">
+              <div class="w-full flex items-center justify-between">
+                <input type="text" value="12 imágenes para tus redes sociales" class="bg-transparent outline-none w-full edit-input" readonly>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 delete-btn hidden text-red-500 hover:text-red-400">
+                  <path fill-rule="evenodd" d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z" clip-rule="evenodd" />
+                </svg>
+                
+              </div>
+              <div class="w-full flex items-center justify-between">
+                <input type="text" value="Increíble diseño de portada" class="bg-transparent outline-none w-full edit-input" readonly>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 delete-btn hidden text-red-500 hover:text-red-400">
+                  <path fill-rule="evenodd" d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z" clip-rule="evenodd" />
+                </svg>
+                
+              </div>
+              <div class="w-full flex items-center justify-between">
+                <input type="text" value="Historias destacadas para tu perfil" class="bg-transparent outline-none w-full edit-input" readonly>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 delete-btn hidden text-red-500 hover:text-red-400">
+                  <path fill-rule="evenodd" d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z" clip-rule="evenodd" />
+                </svg>
+                
+              </div>
+            </div>
+
+            <h2 class="font-bold">Además, como obsequio: </h2>
+
+            <div class="text-sm flex items-center justify-between">
+              <textarea value="Te potenciamos el perfil con ads (sólo para Instagram)" class="bg-transparent outline-none w-full appearance-none caret-transparent resize-none edit-input" readonly>Te potenciamos el perfil con ads (sólo para Instagram)</textarea> 
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 delete-btn hidden text-red-500 hover:text-red-400">
+                <path fill-rule="evenodd" d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z" clip-rule="evenodd" />
+              </svg>
+            </div>
+
+            <button class="bg-gradient-to-r from-blue-700 to-blue-300 hover:from-blue-600 hover:to-blue-200 ease-in-out duration-300 hover:scale-105 p-2 text-white rounded-md font-bold purchase-btn">Adquirir</button>
+            
+          </div>
+
+          
+
+          
+          <!-- <div class="flex justify-between font-bold">
+            <h1 class="text-lg lg:text-xl text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">Paquete básico</h1>
+            <p class="text-2xl lg:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">35$</p>
+          </div>
+
+          <div class="flex flex-col lg:gap-2 text-sm lg:text-base">
+            <p class="text-base lg:text-lg font-bold">
+              ¿Qué incluye?
+            </p>
+            <p class="flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-green-400 stroke-black">
+              <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
+            </svg>
+            12 imagenes
+          </p>
+            <p class="items-center flex">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-green-400 stroke-black">
+                <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
+              </svg>
+            Portada
+          </p>
+
+            <p class="hidden md:flex group-hover:flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-green-400 stroke-black">
+                <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
+              </svg>
+            Historias destacadas
+          </p>
+
+            <p class="hidden md:flex lg:flex group-hover:flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-green-400 stroke-black">
+                <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
+              </svg>Potenciar perfil IG
+            </p>
+          </div>
+          <button class="group-hover:hidden md:hidden lg:hidden bg-zinc-300/70 p-1 rounded-md text-sm absolute bottom-2 font-bold">¡Cliquea y lee más!</button> -->
+        </div>
+
+        <!-- Paquete 2 -->
+
+
+        <div class="h-[36rem] w-[20rem] md:w-[20rem] lg:w-[25rem] group bg-zinc-100  drop-shadow-md flex flex-col gap-2 relative rounded-md">
+
+          <div class="bg-gradient-to-r from-purple-600 to-purple-300 h-[30%] w-full rounded-t-md p-8 text-white flex flex-col justify-center gap-2">
+              <input type="text" value="Tu perfil será más profesional con nuestro" class="hidden lg:block bg-transparent w-[21rem] outline-none edit-input" readonly>
+              <input type="text" value="Paquete Mediano" class="text-3xl font-bold bg-transparent w-[17rem] outline-none edit-input" readonly>
+              <input type="text" value="Sólo por 55$" class="bg-transparent text-lg outline-none edit-input" readonly>
+          </div>
+
+          <div class="p-8 flex flex-col gap-4">
+            <h1 class="text-lg font-bold">Nuestro paquete mediano incluye: </h1>
+
+            <div class="text-sm flex flex-col gap-2 w-full">
+              <div class="w-full flex items-center justify-between">
+                <input type="text" value="24 imágenes para tus redes sociales" class="bg-transparent outline-none w-full edit-input" readonly>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 delete-btn hidden text-red-500 hover:text-red-400">
+                  <path fill-rule="evenodd" d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z" clip-rule="evenodd" />
+                </svg>
+                
+              </div>
+
+              <div class="w-full flex items-center justify-between">
+                <input type="text" value="5 stories para tu perfil" class="bg-transparent outline-none w-full edit-input" readonly>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 delete-btn hidden text-red-500 hover:text-red-400">
+                  <path fill-rule="evenodd" d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z" clip-rule="evenodd" />
+                </svg>
+                
+              </div>
+              <div class="w-full flex items-center justify-between">
+                <input type="text" value="Increíble diseño de portada" class="bg-transparent outline-none w-full edit-input" readonly>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 delete-btn hidden text-red-500 hover:text-red-400">
+                  <path fill-rule="evenodd" d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z" clip-rule="evenodd" />
+                </svg>
+                
+              </div>
+              <div class="w-full flex items-center justify-between">
+                <input type="text" value="Historias destacadas para tu perfil" class="bg-transparent outline-none w-full edit-input" readonly>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 delete-btn hidden text-red-500 hover:text-red-400">
+                  <path fill-rule="evenodd" d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z" clip-rule="evenodd" />
+                </svg>
+                
+              </div>
+            </div>
+
+            <h2 class="font-bold">Además, como obsequio: </h2>
+
+            <div class="text-sm flex items-center justify-between">
+              <textarea value="Te potenciamos el perfil con ads (sólo para Instagram)" class="bg-transparent outline-none w-full appearance-none caret-transparent resize-none edit-input" readonly>Te potenciamos el perfil con ads (sólo para Instagram)</textarea> 
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 delete-btn hidden text-red-500 hover:text-red-400">
+                <path fill-rule="evenodd" d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <button class="bg-gradient-to-r from-purple-600 to-purple-300 hover:from-purple-500 hover:to-purple-200 ease-in-out duration-300 hover:scale-105 p-2 text-white rounded-md font-bold purchase-btn">Adquirir</button>
+          </div>
+
+          <div class="absolute bg-white h-5 lg:w-32 md:text-xs flex items-center p-2 lg:text-sm text-center top-28 lg:top-32 right-0 rounded-l-md">Recomendada</div>
+
+          
+
+          <!-- <div class="flex justify-between font-bold">
+            <h1 class="text-lg lg:text-xl text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">Paquete básico</h1>
+            <p class="text-2xl lg:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">35$</p>
+          </div>
+
+          <div class="flex flex-col lg:gap-2 text-sm lg:text-base">
+            <p class="text-base lg:text-lg font-bold">
+              ¿Qué incluye?
+            </p>
+            <p class="flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-green-400 stroke-black">
+              <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
+            </svg>
+            12 imagenes
+          </p>
+            <p class="items-center flex">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-green-400 stroke-black">
+                <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
+              </svg>
+            Portada
+          </p>
+
+            <p class="hidden md:flex group-hover:flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-green-400 stroke-black">
+                <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
+              </svg>
+            Historias destacadas
+          </p>
+
+            <p class="hidden md:flex lg:flex group-hover:flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-green-400 stroke-black">
+                <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
+              </svg>Potenciar perfil IG
+            </p>
+          </div>
+          <button class="group-hover:hidden md:hidden lg:hidden bg-zinc-300/70 p-1 rounded-md text-sm absolute bottom-2 font-bold">¡Cliquea y lee más!</button> -->
+        </div>
+
+        <!-- Paquete 3 -->
+
+
+        <div class="h-[36rem] w-[20rem] md:w-[20rem] lg:w-[25rem] group bg-zinc-100  drop-shadow-md flex flex-col gap-2 relative rounded-md">
+
+          <div class="bg-gradient-to-r from-orange-500 to-amber-300 h-[30%] w-full rounded-t-md p-8 text-white flex flex-col justify-center gap-2">
+              <input type="text" value="Avanza al siguiente nivel con nuestro" class="hidden lg:block bg-transparent w-[21rem] outline-none edit-input" readonly>
+              <input type="text" value="Paquete Premium" class="text-3xl font-bold bg-transparent w-[17rem] outline-none edit-input" readonly>
+              <input type="text" value="Sólo por 80$" class="bg-transparent text-lg outline-none edit-input" readonly>
+          </div>
+
+          <div class="p-8 flex flex-col gap-4">
+            <h1 class="text-lg font-bold">Nuestro paquete premium incluye: </h1>
+
+            <div class="text-sm flex flex-col gap-2 w-full">
+              <div class="w-full flex items-center justify-between">
+                <input type="text" value="24 imágenes para tus redes sociales" class="bg-transparent outline-none w-full edit-input" readonly>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 delete-btn hidden text-red-500 hover:text-red-400">
+                  <path fill-rule="evenodd" d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z" clip-rule="evenodd" />
+                </svg>
+                
+              </div>
+
+              <div class="w-full flex items-center justify-between">
+                <input type="text" value="12 stories para tu perfil" class="bg-transparent outline-none w-full edit-input" readonly>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 delete-btn hidden text-red-500 hover:text-red-400">
+                  <path fill-rule="evenodd" d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z" clip-rule="evenodd" />
+                </svg>
+                
+              </div>
+              <div class="w-full flex items-center justify-between">
+                <input type="text" value="Increíble diseño de portada" class="bg-transparent outline-none w-full edit-input" readonly>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 delete-btn hidden text-red-500 hover:text-red-400">
+                  <path fill-rule="evenodd" d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z" clip-rule="evenodd" />
+                </svg>
+                
+              </div>
+              <div class="w-full flex items-center justify-between">
+                <input type="text" value="Historias destacadas para tu perfil" class="bg-transparent outline-none w-full edit-input" readonly>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 delete-btn hidden text-red-500 hover:text-red-400">
+                  <path fill-rule="evenodd" d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z" clip-rule="evenodd" />
+                </svg>
+                
+              </div>
+            </div>
+
+            <h2 class="font-bold">Además, como obsequio: </h2>
+
+            <div class="text-sm flex items-center justify-between">
+              <textarea value="Te potenciamos el perfil con ads (sólo para Instagram)" class="bg-transparent outline-none w-full appearance-none caret-transparent resize-none edit-input" readonly>Te potenciamos el perfil con ads (sólo para Instagram)</textarea> 
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 delete-btn hidden text-red-500 hover:text-red-400">
+                <path fill-rule="evenodd" d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z" clip-rule="evenodd" />
+              </svg>
+            </div>
+
+            <button class="bg-gradient-to-r from-orange-500 to-amber-300 hover:from-orange-400 hover:to-amber-200 ease-in-out duration-300 hover:scale-105 p-2 text-white rounded-md font-bold purchase-btn">Adquirir</button>
+
+          </div>
+
+          
+        </div>
+
+        
+
+        
+        
+
+        
+
+        <!-- <button class="absolute bottom-5 bg-zinc-100 flex lg:right-20 lg:top-8 lg:bottom-auto hover:bg-zinc-300 p-1 rounded-md items-center purchase-btn">Ir a comprar <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+          <path fill-rule="evenodd" d="M3.75 12a.75.75 0 01.75-.75h13.19l-5.47-5.47a.75.75 0 011.06-1.06l6.75 6.75a.75.75 0 010 1.06l-6.75 6.75a.75.75 0 11-1.06-1.06l5.47-5.47H4.5a.75.75 0 01-.75-.75z" clip-rule="evenodd" />
+        </svg>
+        </button> -->
+        
+      </div>
+        
+
+        
+        
+
+
+
+        
+    </div>
+
+    <div id="my-services" class="client h-full p-8 hidden text-zinc-100">
+      <h1 class="text-center font-bold text-xl">Mis servicios</h1>
+         
+            
+            
+            <div id="users" class="h-full flex justify-center p-4">
+              <!-- Grid father -->
+              <table class="table-auto h-auto w-full flex flex-col md:items-center snap-center flex-none overflow-x-auto">
+      
+                <thead class="md:w-[45rem] lg:w-[60rem] lg:text-base text-sm w-[50rem] flex-none">
+                  <tr class="flex justify-between text-center border-b border-slate-500 sm:text-base text-sm">
+      
+                    <th class="border-r border-slate-500 w-full">Tipo de servicio</th>
+                    <th class="border-r border-slate-500 w-full">Paquete</th>
+                    <th class="border-r border-slate-500 w-full">Estado</th>
+                  </tr>
+                </thead>
+      
+                <tbody id="myservices-container" class="md:w-[45rem] lg:w-[60rem] lg:text-base text-sm w-[50rem]">
+      
+                  <!-- <tr class="flex justify-between py-2 border-b border-slate-900/20 items-center">
+                    <td class="w-full border-slate-900/20 px-2">Diseño Gráfico</td>
+                    <td class="w-full border-slate-900/20 px-2">Paquete mediano</td>
+                    <td class="w-full border-slate-900/20 px-2 text-green-400 font-bold">Aprobado</td>
+                  </tr> -->
+      
+                  
+                </tbody>
+                <!-- <li class="bg-zinc-100 h-[125%] text-center text-base md:text-sm lg:text-base flex flex-col justify-center py-4 rounded-md p-4 shadow-md gap-2">
+                  <p>Antonio José de Sucre Blanco</p>
+                  <p>424-1501232<p>
+                  <p>ejemploejemplificado@ejemplo.com</p>
+      
+                  <div class="flex items-center justify-center gap-4">
+                    <button class="bg-blue-400 hover:bg-blue-300 p-1 rounded-md font-bold text-white">Briefings</button>
+                    <button class="bg-green-400 hover:bg-green-300 p-1 rounded-md font-bold text-white">Solicitudes</button>
+                  </div>
+                </li> -->
+      
+              </table>
+                
+        
+            </div>
+              
+      
+    </div>
+
+    <div id="prices" class="h-full w-full flex justify-center items-center p-4 pb-16 hidden client">
+      <div class="h-full w-full flex flex-col justify-center items-center p-8 text-zinc-100">
+        <div>
+          <h1 class="lg:text-2xl font-bold">Cotización de proyecto</h1>
+        </div>
+        <form id="price-form" class="p-4 flex flex-col w-full justify-center items-center text-sm font-semibold ">
+          <div class="p-8 md:gap-10 gap-4 w-full grid grid-rows-1 md:grid-cols-2 lg:grid-cols-2 place-content-center md:justify-items-center lg:justify-items-center">
+            <!-- Proyecto -->
+            <div class="flex flex-col w-72 md:w-64 lg:w-80 gap-2 ">
+              <label for="project"> Requerimiento </label>
+              <input id="question-1-input" autocomplete="off" class="border-2 rounded-md border-zinc-400 focus:outline-none focus:border-blue-500 font-normal bg-transparent p-2" type="text">
+            </div>
+            <!-- Proyecto -->
+            <div class="flex flex-col w-72 md:w-64 gap-2 lg:w-80">
+              <label for="project"> Presupuesto (corto, medio, amplio o especificado) </label>
+              <input id="question-2-input" autocomplete="off" class="border-2 rounded-md border-zinc-400 focus:outline-none focus:border-blue-500 font-normal bg-transparent p-2" type="text">
+            </div>
+            <!-- Proyecto -->
+            <div class="flex flex-col w-72 gap-2 md:w-64 lg:w-80">
+              <label for="project"> Nombre de la marca </label>
+              <input id="question-3-input" autocomplete="off" class="border-2 rounded-md border-zinc-400 focus:outline-none focus:border-blue-500 font-normal bg-transparent p-2" type="text">
+            </div>
+            <!-- Proyecto -->
+            <div class="flex flex-col w-72 gap-2 md:w-64 lg:w-80">
+              <label for="project"> A qué se dedica la marca </label>
+              <input id="question-4-input" autocomplete="off" class="border-2 rounded-md border-zinc-400 focus:outline-none focus:border-blue-500 font-normal bg-transparent p-2" type="text">
+            </div>
+            <!-- Proyecto -->
+            <div class="flex flex-col w-72 gap-2 md:w-64 lg:w-80">
+              <label for="project"> Red social </label>
+              <input id="question-5-input" autocomplete="off" class="border-2 rounded-md border-zinc-400 focus:outline-none focus:border-blue-500 font-normal bg-transparent p-2" type="text">
+            </div>
+            <!-- Proyecto -->
+            <div class="flex flex-col w-72 gap-2 md:w-64 lg:w-80">
+              <label for="project"> Expectativas </label>
+              <input id="question-6-input" autocomplete="off" class="border-2 rounded-md border-zinc-400 focus:outline-none focus:border-blue-500 font-normal bg-transparent p-2" type="text">
+            </div>
+
+
+
+
+          </div>
+          <button class="bg-green-400 rounded-md p-2 w-48 font-semibold">Enviar</button>
+        </form>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+  <!-- <script src="../components/nav.js"></script> -->
+  <script type="module" src="index.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
+</body>
+
+</html>

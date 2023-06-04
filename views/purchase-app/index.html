@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      font-family: "Poppins", serif;
+
+    }
+
+    
+
+
+    :root {
+      --animate-delay: 0.5s;
+    }
+  </style>
+
+  <title>¡Bienvenido a !</title>
+</head>
+
+<body>
+
+
+  
+
+  <!-- <div id="backdrop-mobile" class="h-screen w-screen bg-black opacity-50 fixed z-10 hidden">
+  </div> -->
+
+
+
+ 
+
+  <div id="main-div" class="h-screen w-screen">
+
+    <!-- Home page -->
+
+    <div id="home" class="h-full w-full">
+
+      <div id="container" class="h-screen w-full flex flex-col gap-4 items-center justify-center">
+
+        <!-- Circulos de pasos y botones -->
+        
+
+        <div class="flex items-center justify-around w-full">
+          <!-- Botón Volver -->
+            <div class="carousel-controls">
+              <a class="carousel-prev  flex ease-in-out duration-300 text-sm hover:scale-110 items-center">
+                <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+              </svg>
+              <span class="hidden lg:block">Volver</span>
+            </a>
+
+            <a class="app-prev  hidden flex ease-in-out duration-300 text-sm hover:scale-110 items-center">
+              <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+            </svg>
+            <span class="hidden lg:block">Volver</span>
+          </a>
+            </div>
+
+            <!-- Indicators -->
+
+            <div class="flex items-center justify-center">
+              <button id="b-1" class="h-10 w-10 rounded-full border-2 border-pink-500 bg-pink-500 flex items-center justify-center">1</button>
+              <div class="h-[0.15rem] bg-pink-500 w-10"></div>
+              <button id="b-2" class="h-10 w-10 rounded-full border-2 border-pink-500  flex items-center justify-center">2</button>
+              <div class="h-[0.15rem] bg-pink-500 w-10"></div>
+              <button id="b-3" class="h-10 w-10 rounded-full border-2 border-pink-500  flex items-center justify-center">3</button>
+              </div>
+
+          <!-- Siguiente -->
+
+             <div>
+              <button>
+               <a id="next-btn" class="hidden flex ease-in-out duration-300 text-sm hover:scale-110 items-center"> Siguiente
+                <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                </svg></a>
+              </button>
+             </div> 
+
+        </div>
+        
+        
+        
+        <!-- Carrusel container -->
+        <div class="relative h-[75%] w-[80%] lg:h-[80%] lg:w-[80%] bg-zinc-100 rounded-md">
+          <!-- Cuadro del carrusel -->
+          <div class="relative h-full overflow-hidden rounded-lg flex scroll-smooth">
+              <!-- Item 1 -->
+            <div class="flex-none carousel-item flex lg:flex-row flex-col lg:gap-[5%] h-full w-full">
+
+              <div class="h-full lg:h-full lg:w-full flex flex-col lg:flex-row lg:justify-center gap-5 lg:gap-28 items-center pt-12 lg:pt-0 text-sm lg:text-base">
+                
+                <div class="flex flex-col">
+                  <h1 class="font-bold text-base text-center">Selecciona el servicio</h1>
+                  <div class="flex flex-col gap-3">
+
+                    <!-- Selectores -->
+
+                    <div class="flex justify-center">
+                      <div class="relative flex flex-col gap-4">
+                        <svg class="w-2 h-2 absolute top-0 right-0 m-4 pointer-events-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 412 232"><path d="M408.3 4.7c-4.7-4.7-12.3-4.7-17 0L206 195 21.7 4.7c-4.7-4.7-12.3-4.7-17 0s-4.7 12.3 0 17l196.7 197c2.3 2.3 5.3 3.4 8.5 3.4s6.2-1.1 8.5-3.4l196.7-197c4.7-4.7 4.7-12.3 0-17z"/></svg>
+
+                        <select id="selector" class="border border-gray-300 rounded-md text-gray-600 h-10 pl-5 pr-10 bg-white hover:border-gray-400 focus:outline-none appearance-none">
+                          <option selected disabled value="">Seleccionar servicio</option>
+                          <option value="Diseño Web">Diseño de redes</option>
+                          <option value="Redacción Web">Redacción	web</option>
+                          <option value="Páginas Web">Páginas web</option>
+                        </select>
+
+                        <select id="design-selector" class="border border-gray-300 rounded-md text-gray-600 h-10 pl-5 pr-10 bg-white hover:border-gray-400 focus:outline-none appearance-none hidden">
+                          <option value="">Seleccione una opción</option>
+                          <option value="Paquete básico">Paquete básico</option>
+                          <option value="Paquete mediano">Paquete mediano</option>
+                          <option value="Paquete premium">Paquete premium</option>
+                        </select>
+
+                        <select id="writing-selector" class="border border-gray-300 rounded-md text-gray-600 h-10 pl-5 pr-10 bg-white hover:border-gray-400 focus:outline-none appearance-none hidden">
+                          <option value="">Seleccione una opción</option>
+                          <option value="Paquete básico">Paquete básico</option>
+                          <option value="Paquete mediano">Paquete mediano</option>
+                          <option value="Paquete premium">Paquete premium</option>
+                        </select>
+
+                        <select id="web-page-selector" class="border border-gray-300 rounded-md text-gray-600 h-10 pl-5 pr-10 bg-white hover:border-gray-400 focus:outline-none appearance-none hidden">
+                          <option value="">Seleccione una opción</option>
+                          <option value="Paquete básico">Paquete básico</option>
+                          <option value="Paquete mediano">Paquete mediano</option>
+                          <option value="Paquete premium">Paquete premium</option>
+                        </select>
+                      </div>
+                    </div>
+                    
+                    <!-- Opciones Selectores -->
+
+
+                    <div id="opciones-secundarias" class="mt-4 w-full">
+                      <div id="design-container" class="flex gap-4 w-full">
+                        <!-- Item 1 -->
+                        <div class="hidden w-full flex flex-col gap-4 items-center">
+                          <div class="bg-gradient-to-r from-blue-700 to-blue-300 font-bold rounded-md p-4 flex justify-between items-center gap-4 text-white">
+                            <h1>Paquete <span class="uppercase">básico</span></h1><span id="price-span-b" class="text-lg">30$</span>
+                          </div>
+
+                          
+                        </div>
+                        <!-- Item 2 -->
+                        <div class="hidden w-full flex flex-col items-center">
+                          <div class="bg-gradient-to-r from-purple-600 to-purple-300 font-bold rounded-md p-4 flex justify-between items-center gap-4 text-white">
+                            <h1>Paquete <span class="uppercase">mediano</span></h1><span id="price-span-b" class="text-lg">55$</span>
+                          </div>
+
+                          
+                        </div>
+                        <!-- Item 3 -->
+                        <div class="hidden w-full flex flex-col items-center">
+                          <div class="bg-gradient-to-r from-orange-500 to-amber-300 font-bold rounded-md p-4 flex justify-between items-center gap-4 text-white">
+                            <h1>Paquete <span class="uppercase">premium</span></h1><span id="price-span-b" class="text-lg">80$</span>
+                          </div>
+                          
+                        </div>
+                      </div>
+
+                      <div id="writing-container" class="flex gap-4 w-full">
+                        <!-- Item 1 -->
+                        <div class="hidden w-full flex flex-col gap-4 items-center">
+                          <div class="bg-gradient-to-r from-blue-700 to-blue-300 font-bold rounded-md p-4 flex justify-between items-center gap-4 text-white">
+                            <h1>Paquete <span class="uppercase">básico</span></h1><span id="price-span-b" class="text-lg">30$</span>
+                          </div>
+
+                          
+                        </div>
+                        <!-- Item 2 -->
+                        <div class="hidden w-full flex flex-col items-center">
+                          <div class="bg-gradient-to-r from-purple-600 to-purple-300 font-bold rounded-md p-4 flex justify-between items-center gap-4 text-white">
+                            <h1>Paquete <span class="uppercase">mediano</span></h1><span id="price-span-b" class="text-lg">55$</span>
+                          </div>
+
+                          
+                        </div>
+                        <!-- Item 3 -->
+                        <div class="hidden w-full flex flex-col items-center">
+                          <div class="bg-gradient-to-r from-orange-500 to-amber-300 font-bold rounded-md p-4 flex justify-between items-center gap-4 text-white">
+                            <h1>Paquete <span class="uppercase">premium</span></h1><span id="price-span-b" class="text-lg">80$</span>
+                          </div>
+                          
+                        </div>
+                      </div>
+
+                      <div id="web-page-container" class="flex gap-4 w-full">
+                        <!-- Item 1 -->
+                        <!-- Item 1 -->
+                        <div class="hidden w-full flex flex-col gap-4 items-center">
+                          <div class="bg-gradient-to-r from-blue-700 to-blue-300 font-bold rounded-md p-4 flex justify-between items-center gap-4 text-white">
+                            <h1>Paquete <span class="uppercase">básico</span></h1><span id="price-span-b" class="text-lg">30$</span>
+                          </div>
+
+                          
+                        </div>
+                        <!-- Item 2 -->
+                        <div class="hidden w-full flex flex-col items-center">
+                          <div class="bg-gradient-to-r from-purple-600 to-purple-300 font-bold rounded-md p-4 flex justify-between items-center gap-4 text-white">
+                            <h1>Paquete <span class="uppercase">mediano</span></h1><span id="price-span-b" class="text-lg">55$</span>
+                          </div>
+
+                          
+                        </div>
+                        <!-- Item 3 -->
+                        <div class="hidden w-full flex flex-col items-center">
+                          <div class="bg-gradient-to-r from-orange-500 to-amber-300 font-bold rounded-md p-4 flex justify-between items-center gap-4 text-white">
+                            <h1>Paquete <span class="uppercase">premium</span></h1><span id="price-span-b" class="text-lg">80$</span>
+                          </div>
+                          
+                        </div>
+                      </div>
+                    </div>
+
+                    
+                    
+                  </div>
+
+                </div>
+
+                <div class="flex flex-col gap-4">
+                  <h1 class="text-center text-base font-bold">Seleccione su método de pago</h1>
+
+                  <!-- Payment methods -->
+
+                  <div id="btn-container" class="flex flex-col gap-4 font-bold">
+                    <!-- Method 1 -->
+                    <button id="pago-movil" class="flex items-center bg-zinc-200 p-2 rounded-md justify-between carousel-next-pm"><span class="flex items-center gap-2 pm-svg"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 pm-svg">
+                      <path class="pm-svg" stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
+                    </svg>
+                    Pago móvil</span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 pm-svg">
+                      <path class="pm-svg" stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                    </svg>
+                    </button>
+                    <!-- Method 2 -->
+                    <button id="transferencia" class="flex items-center bg-zinc-200 p-2 rounded-md justify-between carousel-next-t"><span class="flex items-center gap-2 t-svg"><svg id="" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 t-svg">
+                      <path class="t-svg" stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" />
+                    </svg>
+                    Transferencia bancaria</span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 t-svg">
+                      <path class="t-svg" stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                    </svg>
+                    </button>
+                  </div>
+
+
+                </div>
+              </div>
+
+              
+            </div>
+
+            <!-- Item 2 -->
+
+            <div class="flex-none carousel-item h-full w-full">
+
+              <div id="pm" class="hidden flex flex-col lg:flex-row lg:justify-center items-center gap-4 pt-12">
+                
+                <div class="flex flex-col  items-center justify-center gap-8">
+                  <h1 class="font-bold text-center text-lg">Datos de pago movil</h1>
+                  <!-- Datos -->
+                  <div class="flex flex-col gap-4 w-56 text-sm text-center">
+                    <span class="bg-zinc-200 p-2 rounded-md flex flex-col">
+                      <label for="" class="font-bold">Cédula</label>
+                      XXXXXXXX
+                    </span>
+                    
+                      <span class="bg-zinc-200 p-2 rounded-md flex flex-col">
+                        <label for="" class="font-bold">Teléfono</label>
+                        XXX-XXXXXXX</span>
+                        <span class="bg-zinc-200 p-2 rounded-md flex flex-col">
+                          <label for="" class="font-bold">Banco</label>
+                          Banco de Venezuela</span>
+                  </div>
+
+                  <!-- Enviar referencia -->
+
+                  <div class="bg-zinc-200 p-4 rounded-md w-56">
+                    <form id="ref-form-pm" class="flex flex-col gap-4 font-bold items-center">
+                      <label for="ref-input-pm" class="text-lg text-center">Indique el número <br> de referencia</label>
+                      <input id="ref-input-pm" type="text" class="h-7 rounded-md focus:outline-pink-500 focus:ring-blue-400">
+                      <button disabled class="bg-pink-500 rounded-md w-28 py-1 disabled:cursor-not-allowed disabled:bg-pink-300 disabled:text-black/60">Enviar</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+              <div id="t" class="hidden flex flex-col items-center gap-4 pt-12">
+                <div class="flex flex-col items-center justify-center gap-8">
+                <h1 class="font-bold text-center text-lg">Datos de transferencia</h1>
+
+                  <!-- Datos -->
+                  <div class="flex flex-col gap-4 w-56 text-sm text-center">
+                    <span class="bg-zinc-200 p-2 rounded-md flex flex-col">
+                      <label for="" class="font-bold">Cédula</label>
+                      XXXXXXXX
+                    </span>
+                    <span class="bg-zinc-200 p-2 rounded-md flex flex-col">
+                      <label for="" class="font-bold">Nro. de cuenta</label>
+                      XXXX-XXXX-XXXX-XXXX</span>
+                      <span class="bg-zinc-200 p-2 rounded-md flex flex-col">
+                        <label for="" class="font-bold">Teléfono</label>
+                        XXX-XXXXXXX</span>
+                        <span class="bg-zinc-200 p-2 rounded-md flex flex-col">
+                          <label for="" class="font-bold">Banco</label>
+                          Banco de Venezuela</span>
+                  </div>
+
+                  <!-- Enviar referencia -->
+
+                  <div class="bg-zinc-200 p-4 rounded-md w-56">
+                    <form id="ref-form-t" class="flex flex-col gap-4 font-bold items-center">
+                      <label for="ref-input-t" class="text-lg text-center">Indique el número <br> de referencia</label>
+                      <input id="ref-input-t" type="text" class="h-7 rounded-md focus:outline-pink-500 focus:ring-blue-400">
+                      <button disabled class="bg-pink-500 rounded-md w-28 py-1 disabled:cursor-not-allowed disabled:bg-pink-300 disabled:text-black/60">Enviar</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 3 -->
+
+            <div class="flex-none carousel-item bg-zinc-100 h-full w-full flex items-center justify-center">
+              <div class="flex flex-col items-center justify-center gap-4 font-bold">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 fill-pink-500">
+                  <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM12.75 6a.75.75 0 00-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 000-1.5h-3.75V6z" clip-rule="evenodd" />
+                </svg>
+                
+                <h1>Estamos validando su pago</h1>
+                <h2 class="text-center">Será notificado via <br> e-mail cuando sea confirmado. <br> ¡Gracias por confiar en nosotros!</h2>
+              </div>
+            </div>
+
+          </div>
+      </div>
+  
+        
+        
+      </div>
+
+
+    </div>
+
+    
+
+  </div>
+
+  <!-- <script src="../components/nav.js"></script> -->
+  <script src="index.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
+</body>
+
+</html>

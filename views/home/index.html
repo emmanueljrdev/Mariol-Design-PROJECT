@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="shortcut icon" href="./images/gatito chiquito.svg">
+  <style>
+    body {
+      font-family: "Poppins", serif;
+
+    }
+
+    #main-div {
+      background-image: url(/images/banner-01.svg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      
+    }
+
+    #about-us, #services, #projects {
+      background-image: url(/images/fondo-espacial.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    
+
+    :root {
+      --animate-delay: 0.5s;
+    }
+  </style>
+
+  <title>¡Bienvenido a Mariol Design!</title>
+</head>
+
+<body class="bg-black">
+  
+
+  <nav id="navbar" class="backdrop-blur- bg-neutral-900 h-20 fixed w-full top-0 z-30">
+    <!-- <div class="fixed md:-top-24 top-20 bg-red-500 -left-60 md:left-0 md:right-0 bottom-0 md:bottom-auto flex flex-col md:flex-row p-12 md:gap-8 md:h-20 md:items-center md:justify-center ease-in-out duration-300 z-20">
+    
+      <div class="gap-4 flex flex-col md:flex-row md:text-sm lg:text-base text-white">
+        <a class="opacity-50 p-2 rounded-lg font-semibold hover:opacity-100 hover:-translate-y-1 transition-transform ease-in-out duration-300" href="#home">Home</a>
+        <a class="p-2 rounded-lg font-semibold transition-transform hover:scale-125" href="#about-us">Sobre nosotros</a>
+        <a class="p-2 rounded-lg font-semibold transition-transform  hover:scale-125" href="#projects">Proyectos</a>
+        <a class="p-2 rounded-lg font-semibold transition-transform  hover:scale-125" href="">Servicios</a>
+        <a class="p-2 rounded-lg font-semibold transition-transform  hover:scale-125" href="">Contacto</a>
+      </div>
+  
+      <div class="flex flex-col md:flex-row gap-2 md:text-sm">
+        <a href="/signup" class="bg-pink-500 p-2 rounded-md text-white font-bold w-32 text-center">Registrarse</a>
+        <a href="/login" class="p-2 rounded-md text-white font-bold w-32 text-center">Iniciar Sesión</a>
+      </div>
+    </div> -->
+    
+
+    <!-- <div class="max-w-7xl h-full mx-auto flex items-center justify-center md:gap-20  relative px-4">
+
+      
+
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8 absolute left-5 text-white md:hidden">
+        <path fill-rule="evenodd" d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z" clip-rule="evenodd" />
+      </svg>
+      
+      <a href="#home" class="cursor-pointer md:absolute md:left-5">
+        <img src="../../img/gatito chiquito.svg" alt="" class="h-16">
+      </a>
+
+      
+
+      <div class="gap-8 hidden md:flex md:text-sm lg:text-base text-white">
+        <a class="opacity-50 p-2 rounded-lg font-semibold hover:opacity-100 hover:-translate-y-1 transition-transform ease-in-out duration-300" href="#home">Home</a>
+        <a class="p-2 rounded-lg font-semibold transition-transform hover:scale-125" href="#about-us">Sobre nosotros</a>
+        <a class="p-2 rounded-lg font-semibold transition-transform  hover:scale-125" href="#projects">Proyectos</a>
+        <a class="p-2 rounded-lg font-semibold transition-transform  hover:scale-125" href="">Servicios</a>
+        <a class="p-2 rounded-lg font-semibold transition-transform  hover:scale-125" href="">Contacto</a>
+      </div>
+
+    </div> -->
+  </nav>
+
+  
+
+
+
+  <div id="backdrop-mobile" class="h-screen w-screen bg-black opacity-50 fixed z-10 hidden lg:hidden">
+  </div>
+
+  <div id="main-div" class="h-screen bg-center ">
+
+    <div id="home"
+      class="flex flex-col items-center md:items-start text-zinc-100 justify-center font-black gap-32 lg:gap-40 lg:pt-40 mx-10 md:mx-20 lg:mx-36 lg:py-16 h-full">
+
+
+      <div class="flex flex-col items-center md:items-start gap-4 lg:gap-12">
+        <h1 class="text-4xl md:text-6xl lg:text-6xl leading-tight">
+          Imagina y crea <br>
+          con nosotros.<br>
+        </h1>
+
+        <button class="relative p-1">
+          <div class="bg-pink-500 -inset-1 blur opacity-50 absolute rounded-md"></div>
+          <a href="#about-us" class="bg-pink-500 p-2 rounded-md relative md:text-2xl lg:text-2xl">Iniciar viaje</a>
+        </button>
+      </div>
+
+      <div class="hidden md:flex items-center gap-2 md:gap-8 justify-between text-xs md:text-sm lg:text-lg w-full">
+
+        <div class="flex items-center gap-2 md:gap-8 w-full justify-center p-2 rounded-md">
+          <!-- <div class="h-16 w-16 rounded-full bg-white"></div> -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+            <path d="M12 .75a8.25 8.25 0 00-4.135 15.39c.686.398 1.115 1.008 1.134 1.623a.75.75 0 00.577.706c.352.083.71.148 1.074.195.323.041.6-.218.6-.544v-4.661a6.714 6.714 0 01-.937-.171.75.75 0 11.374-1.453 5.261 5.261 0 002.626 0 .75.75 0 11.374 1.452 6.712 6.712 0 01-.937.172v4.66c0 .327.277.586.6.545.364-.047.722-.112 1.074-.195a.75.75 0 00.577-.706c.02-.615.448-1.225 1.134-1.623A8.25 8.25 0 0012 .75z" />
+            <path fill-rule="evenodd" d="M9.013 19.9a.75.75 0 01.877-.597 11.319 11.319 0 004.22 0 .75.75 0 11.28 1.473 12.819 12.819 0 01-4.78 0 .75.75 0 01-.597-.876zM9.754 22.344a.75.75 0 01.824-.668 13.682 13.682 0 002.844 0 .75.75 0 11.156 1.492 15.156 15.156 0 01-3.156 0 .75.75 0 01-.668-.824z" clip-rule="evenodd" />
+          </svg>
+          
+          
+          <p class="">Creatividad </p>
+        </div>
+
+        <div class="flex items-center gap-2 md:gap-8 w-full justify-center relative p-2 rounded-md">
+          <!-- <div class="h-16 w-16 rounded-full bg-white"></div> -->
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+            <path d="M11.25 4.533A9.707 9.707 0 006 3a9.735 9.735 0 00-3.25.555.75.75 0 00-.5.707v14.25a.75.75 0 001 .707A8.237 8.237 0 016 18.75c1.995 0 3.823.707 5.25 1.886V4.533zM12.75 20.636A8.214 8.214 0 0118 18.75c.966 0 1.89.166 2.75.47a.75.75 0 001-.708V4.262a.75.75 0 00-.5-.707A9.735 9.735 0 0018 3a9.707 9.707 0 00-5.25 1.533v16.103z" />
+          </svg>
+          
+          <p class="relative">Innovación </p>
+        </div>
+
+        <div class="flex items-center gap-2 md:gap-8 w-full justify-center relative p-2 rounded-md">
+          <!-- <div class="h-16 w-16 rounded-full bg-white"></div> -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+            <path fill-rule="evenodd" d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z" clip-rule="evenodd" />
+          </svg>
+          
+          
+          <p class="relative right-0">Eficiencia</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="about-us" class="text-white flex h-full pt-20 px-14 items-center justify-center gap-40 ">
+      
+
+      <div class="h-[36rem] hidden lg:block">
+        <img src="../../img/moto-version.png" alt="" class="h-full w-full">
+      </div>
+
+      <div class="flex flex-col gap-12 max-w-xl">
+        <h1 class="text-3xl font-bold"> ¿Quienes somos? </h1>
+
+        <p class="leading-8 ">Somos <span class="font-bold">Mariol Design,</span> una agencia especializada en <br
+          class="lg:block hidden">diferentes tópicos dentro del mundo digital. Partimos <br class="lg:block hidden">de
+        una idea, hacer realidad todo lo que desees.</p>
+
+
+        <a href="" class="font-bold rounded-md p-2 flex items-center gap-2 bg-cyan-400 w-32 text-sm">Conocer más...</a>
+
+        <h3 class="lg:text-xl font-bold">Síguenos en Instagram</h3>
+
+        <div class="flex items-center gap-4">
+          <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+          <path
+            d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+          </svg> 
+          <a href="https://www.instagram.com/marioldesign/" class="text-sm bg-cyan-400 p-2 rounded-md font-bold">@marioldesign</a></div>
+        
+      </div>
+
+    </div>
+
+    <div id="services" class="flex flex-col gap-12 justify-evenly items-center p-8 pt-20 text-white ">
+
+      <h1 class="font-bold text-3xl">Servicios de Mariol Design</h1>
+
+      <div class="w-full h-full flex items-center justify-center">
+
+
+        <div class="h-full w-auto flex overflow-x-auto items-center gap-4 snap-mandatory snap-x">
+
+        <!-- Card 1 -->
+
+
+          <div id="project-1" class="bg-zinc-100/20 h-[32rem] lg:w-96 md:w-72 w-60 flex-none flex flex-col rounded-xl snap-center gap-5">
+
+            <div class="mx-4 my-4 lg:text-lg text-sm flex flex-col gap-4 p-4">
+              <h1 class="lg:text-3xl text-2xl font-bold">Diseño gráfico y marketing</h1>
+              <p class="whitespace-normal text-zinc-300">Contamos con un servicio amplio en donde nos especializamos  en  diferentes ámbitos,  estos son:</p>
+            </div>
+            
+            <ul class="list-disc flex flex-col gap-2 lg:text-lg text-sm text-zinc-300 mx-12">
+              <li class="">Diseño para redes sociales</li>
+              <li class="">Logos e identidad visual</li>
+              <li class="">Diseño digital e impreso</li>
+            </ul>
+
+            <div class="my-4 px-8 py-4 ">
+              <a class="bg-pink-500 rounded-md p-2 lg:text-sm text-xs font-bold cursor-pointer">¡Conoce nuestros precios!</a>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+
+  
+          <div id="project-2" class="bg-zinc-100/20 h-[32rem] lg:w-96 md:w-72 w-60 flex-none flex flex-col rounded-xl snap-center gap-2">
+
+            <div class="mx-4 my-4 lg:text-lg text-sm flex flex-col gap-4 p-4">
+              <h1 class="lg:text-3xl text-2xl font-bold">Redacción para blogs y copywriting</h1>
+              <p class="whitespace-normal text-zinc-300">Lo que tu marca necesita en cuánto a información y buena comunicación, te la ofrecemos con nuestro servicio de redacción. <br> Este incluye:</p>
+            </div>
+            
+            <ul class="list-disc flex flex-col gap-2 lg:text-lg text-sm text-zinc-300 mx-12">
+              <li class="">Redacción para blogs y páginas web</li>
+              <li class="">Copywriting para redes sociales</li>
+            </ul>
+
+            <div class=" my-4 px-8 py-4 ">
+              <a class="bg-cyan-400 rounded-md p-2 lg:text-sm text-xs font-bold cursor-pointer">¡Conoce nuestros precios!</a>
+            </div>
+
+          </div>
+
+          <!-- Card 3 -->
+
+  
+          <div id="project-3" class="bg-zinc-100/20 h-[32rem] lg:w-96 md:w-72 w-60 flex-none flex flex-col rounded-xl snap-center gap-5">
+
+            <div class="mx-4 my-4 lg:text-lg text-sm flex flex-col gap-4 p-4">
+              <h1 class="lg:text-3xl text-2xl font-bold">Desarrollo de páginas web</h1>
+              <p class="whitespace-normal text-zinc-300">Todo gran negocio necesita de una buena página web. Nuestro servicio incluye:</p>
+            </div>
+            
+            <ul class="list-disc flex flex-col gap-2 lg:text-lg text-sm text-zinc-300 mx-12" >
+              <li class="">Diseño para web responsivo</li>
+              <li class="">Front-end</li>
+              <li class="">Back-end</li>
+            </ul>
+
+            <div class=" my-4 px-8 py-4 ">
+              <a class="bg-amber-400 rounded-md p-2 lg:text-sm text-xs font-bold cursor-pointer">¡Conoce nuestros precios!</a>
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+
+
+
+
+      </div>
+
+      
+    </div>
+
+    <div id="projects" class="text-white flex flex-col gap-12 justify-center items-center p-12 pt-20 relative w-full">
+
+      <h1 class="font-bold text-3xl">Proyectos</h1>
+
+      
+      <div class="carousel h-full w-full flex lg:gap-8 items-center justify-center">
+
+        <!-- Proyecto 3 -->
+
+        <div class="carousel-item lg:h-[34rem] md:h-[30rem] h-[34rem] lg:w-96 md:w-80 w-72 rounded-xl transition-transform duration-300 p-4 lg:flex flex flex-col gap-8 lg:gap-8 bg-zinc-100/20 text-white hidden" >
+
+          <div class="h-80 w-full bg-white rounded-t-xl">
+
+          </div>
+
+          <div class="flex flex-col gap-4">
+            <h1 class="font-bold text-2xl">Proyecto 3</h1>
+
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+          </div>
+
+          <div>
+            <a href="" class="bg-pink-500 font-bold rounded-md p-2 hover:bg-pink-400">Ver más...</a>
+          </div>
+
+        </div>
+
+        <!-- Proyecto 1 -->
+
+
+        <div class="carousel-item lg:h-[34rem] md:h-[30rem] h-[34rem] lg:w-96 md:w-80 w-72 rounded-xl transition-transform duration-300 p-4 lg:flex flex flex-col gap-8 lg:gap-8 bg-zinc-100/20 text-white hidden" >
+
+          <div class="h-80 w-full bg-white rounded-t-xl">
+
+          </div>
+
+          <div class="flex flex-col gap-4">
+            <h1 class="font-bold text-2xl">Proyecto 1</h1>
+
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+          </div>
+
+          <div>
+            <a href="" class="bg-pink-500 font-bold rounded-md p-2 hover:bg-pink-400">Ver más...</a>
+          </div>
+
+        </div>
+        
+        <!-- Proyecto 2 -->
+
+
+        <div class="carousel-item  lg:h-[34rem] md:h-[30rem] h-[34rem] lg:w-96 md:w-80 w-72 rounded-xl transition-transform duration-300 p-4 lg:flex flex flex-col gap-8 lg:gap-8 bg-zinc-100/20 text-white hidden" >
+
+          <div class="h-80 w-full bg-white rounded-t-xl">
+
+          </div>
+
+          <div class="flex flex-col gap-4">
+            <h1 class="font-bold text-2xl">Proyecto 2</h1>
+
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+          </div>
+
+          <div>
+            <a href="" class="bg-pink-500 font-bold rounded-md p-2 hover:bg-pink-400">Ver más...</a>
+          </div>
+
+        </div>
+        
+      </div>
+
+      <div class="absolute flex items-center justify-center gap-4 w-full top-14 bg-red-300">
+
+        <div class="relative w-full flex items-center justify-center gap-4 text-black bg-red-300 max-w-7xl">
+
+          <button class="carousel-prev bg-white rounded-full lg:left-20 left-16  absolute h-10 w-10 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 stroke-2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+          </svg>
+          </button>
+
+          <button class="carousel-next bg-white rounded-full lg:right-20 right-16 absolute h-10 w-10 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 stroke-2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+          </svg>
+          </button>
+        </div>
+      </div>
+        
+    
+
+    </div>
+
+    <footer class="h-20 bg-neutral-900 w-full lg:text-base text-xs z-20 text-white">
+      <div class="max-w-7xl h-full mx-auto flex items-center justify-between md:gap-20  relative px-4">
+        <div class="flex items-center gap-4">
+          <img src="/images/gatito chiquito.svg" alt="" class="h-12 md:h-20"> 
+          <span class="font-bold">Mariol Design</span>
+        </div>
+  
+        <div class="flex md:flex-row flex-col items-center md:gap-4 gap-2">
+  
+          <div class="flex gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+              <path fill-rule="evenodd" d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z" clip-rule="evenodd" />
+            </svg>
+            <span>+58 424-1507257</span>            
+          </div>
+  
+          <div class="flex gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+              <path fill-rule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
+            </svg>
+            
+            <span>Caracas, Venezuela.</span>            
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+
+
+  <script src="/components/nav.js"></script>
+  <script src="index.js"></script>
+</body>
+
+</html>
