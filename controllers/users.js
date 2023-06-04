@@ -444,7 +444,7 @@ userRouter.post('/', async (request, response) => {
                                 <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                                   <tbody>
                                     <tr>
-                                      <td> <a href="${PAGE_URL}verify/${savedUser.id}/${verifyToken}" target="_blank">Verificar correo</a> </td>
+                                      <td> <a href="${PAGE_URL}/verify/${savedUser.id}/${verifyToken}" target="_blank">Verificar correo</a> </td>
                                     </tr>
                                   </tbody>
                                 </table>
