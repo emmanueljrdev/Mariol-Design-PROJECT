@@ -6,6 +6,7 @@ logOutRouter.get('/', async (request, response) => {
     return response.sendStatus(401);
   }
 
+
   response.clearCookie('accessToken', {
     secure: process.env.NODE_ENV === 'production',
     httpOnly: true
