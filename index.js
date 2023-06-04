@@ -10,5 +10,5 @@ const server = http.createServer(app);
 // Se concecta con el front-end
 
 server.listen(3001, () => {
-  console.log('El servidor está corriendo en el puerto 3003');
+  console.log('El servidor está corriendo en el puerto 3001');
 });
