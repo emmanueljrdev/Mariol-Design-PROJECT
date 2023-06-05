@@ -146,7 +146,7 @@ const isAdmin = (data) => {
               console.log(data);
               const briefsList = document.createElement('li');
               briefsList.id = data.id;
-              briefsList.classList.add('bg-zinc-100', 'h-[100%]','w-[100%]' ,  'rounded-md', 'shadow-md', 'p-4', 'py-4', 'flex', 'flex-col', 'justify-center', 'brief-data');
+              briefsList.classList.add('bg-zinc-700', 'h-[100%]','w-[100%]' ,  'rounded-md', 'shadow-md', 'p-4', 'py-4', 'flex', 'flex-col', 'justify-center', 'brief-data');
 
               briefsList.innerHTML = 
               
@@ -220,7 +220,7 @@ const isAdmin = (data) => {
             if (data.isApproved === false) {
               const requestList = document.createElement('li');
               requestList.id = data.id;
-              requestList.classList.add('bg-zinc-100', 'h-[105%]', 'rounded-md', 'shadow-md', 'p-4', 'py-4', 'flex', 'flex-col', 'justify-center', 'brief-data', 'lg:h-[125%]');
+              requestList.classList.add('bg-zinc-700', 'h-[105%]', 'rounded-md', 'shadow-md', 'p-4', 'py-4', 'flex', 'flex-col', 'justify-center', 'brief-data', 'lg:h-[125%]');
 
               requestList.innerHTML = 
               
