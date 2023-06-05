@@ -1,4 +1,4 @@
-import { getIsAdmin } from '../../../components/getUserRole.js'
+import { createNotification } from "/components/notification.js";
 
 
 const navBar = document.querySelector('#nav-bar');
@@ -539,6 +539,7 @@ briefForm.addEventListener('submit', async  e => {
 
 
 if (question1.value === '' || question2.value === '' || question3.value === '' || question4.value === '' || question5.value === '' || question6.value === '') {
+  
   return
 } 
 
@@ -550,6 +551,11 @@ if (question1.value === '' || question2.value === '' || question3.value === '' |
     question6.value);
 
 await axios.post('/api/briefings', { question1: question1.value, question2: question2.value, question3: question3.value, question4: question4.value, question5: question5.value, question6: question6.value });
+
+  createNotification(false, 'Cotización enviada con éxito');
+      setTimeout(() => {
+        document.querySelector('.notification-active').remove();
+      }, 1500)
 
 
 

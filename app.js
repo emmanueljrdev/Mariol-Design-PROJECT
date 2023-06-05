@@ -22,6 +22,8 @@ const servicesRouter = require('./controllers/services');
 const logOutRouter = require('./controllers/logout')
 const userExtractor = require('./middleware/auth');
 const resetRouter = require('./controllers/reset');
+const { MONGO_URI } = require('./config');
+
 
 
 
@@ -30,7 +32,7 @@ const resetRouter = require('./controllers/reset');
 
 (async () => {
     try {
-      await mongoose.connect(process.env.MONGO_URI_DEV);
+      await mongoose.connect(MONGO_URI);
       console.log('Connected to MONGODB');
     } catch (error) {
       console.log('Not connected');
@@ -55,6 +57,8 @@ app.use('/verify/:id/:token', express.static(path.resolve('views', 'verify')));
 app.use('/purchase/:id/', express.static(path.resolve('views', 'purchase-app')));
 app.use('/reset-password', express.static(path.resolve('views', 'reset')));
 app.use('/reasign/:token', express.static(path.resolve('views', 'reasign')));
+app.use('/services', express.static(path.resolve('views', 'services-page')));
+
 
 
 // Middlewares backend

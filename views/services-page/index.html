@@ -8,19 +8,13 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-  <link rel="shortcut icon" href="images/gatito chiquito.svg">
+  <link rel="shortcut icon" href="/images/gatito chiquito.svg">
   <style>
     body {
       font-family: "Poppins", serif;
 
     }
 
-    #main-div {
-      background-image: url(images/banner-01.svg);
-      background-repeat: no-repeat;
-      background-size: cover;
-      
-    }
 
     
 
@@ -35,13 +29,54 @@
 <body class="bg-black text-white">
 
 
-
+    <nav id="navbar" class="backdrop-blur- bg-neutral-900 h-20 fixed w-full top-0 z-30">
+        <!-- <div class="fixed md:-top-24 top-20 bg-red-500 -left-60 md:left-0 md:right-0 bottom-0 md:bottom-auto flex flex-col md:flex-row p-12 md:gap-8 md:h-20 md:items-center md:justify-center ease-in-out duration-300 z-20">
+        
+          <div class="gap-4 flex flex-col md:flex-row md:text-sm lg:text-base text-white">
+            <a class="opacity-50 p-2 rounded-lg font-semibold hover:opacity-100 hover:-translate-y-1 transition-transform ease-in-out duration-300" href="#home">Home</a>
+            <a class="p-2 rounded-lg font-semibold transition-transform hover:scale-125" href="#about-us">Sobre nosotros</a>
+            <a class="p-2 rounded-lg font-semibold transition-transform  hover:scale-125" href="#projects">Proyectos</a>
+            <a class="p-2 rounded-lg font-semibold transition-transform  hover:scale-125" href="">Servicios</a>
+            <a class="p-2 rounded-lg font-semibold transition-transform  hover:scale-125" href="">Contacto</a>
+          </div>
+      
+          <div class="flex flex-col md:flex-row gap-2 md:text-sm">
+            <a href="/signup" class="bg-pink-500 p-2 rounded-md text-white font-bold w-32 text-center">Registrarse</a>
+            <a href="/login" class="p-2 rounded-md text-white font-bold w-32 text-center">Iniciar Sesión</a>
+          </div>
+        </div> -->
+        
+    
+        <!-- <div class="max-w-7xl h-full mx-auto flex items-center justify-center md:gap-20  relative px-4">
+    
+          
+    
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8 absolute left-5 text-white md:hidden">
+            <path fill-rule="evenodd" d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z" clip-rule="evenodd" />
+          </svg>
+          
+          <a href="#home" class="cursor-pointer md:absolute md:left-5">
+            <img src="../../img/gatito chiquito.svg" alt="" class="h-16">
+          </a>
+    
+          
+    
+          <div class="gap-8 hidden md:flex md:text-sm lg:text-base text-white">
+            <a class="opacity-50 p-2 rounded-lg font-semibold hover:opacity-100 hover:-translate-y-1 transition-transform ease-in-out duration-300" href="#home">Home</a>
+            <a class="p-2 rounded-lg font-semibold transition-transform hover:scale-125" href="#about-us">Sobre nosotros</a>
+            <a class="p-2 rounded-lg font-semibold transition-transform  hover:scale-125" href="#projects">Proyectos</a>
+            <a class="p-2 rounded-lg font-semibold transition-transform  hover:scale-125" href="">Servicios</a>
+            <a class="p-2 rounded-lg font-semibold transition-transform  hover:scale-125" href="">Contacto</a>
+          </div>
+    
+        </div> -->
+    </nav>
 
 
   <div id="backdrop-mobile" class="h-screen w-screen bg-black opacity-50 fixed z-10 hidden">
   </div>
 
-  <div id="main-div" class="h-full bg-center lg:px-40 p-12 flex flex-col items-center gap-12">
+  <div id="main-div" class="h-full bg-center lg:px-40 p-12 pt-20 flex flex-col items-center gap-12">
 
     <div class="flex items-center h-full flex-col gap-4 lg:gap-8 lg:w-[65rem] p-4">
         <h1 class="font-bold text-3xl">Diseño gráfico y marketing</h1>
@@ -116,13 +151,13 @@
         </div>
     </div>
 
-    <div class="flex items-center h-full flex-col gap-4 lg:gap-8 lg:w-[65rem] p-4">
+    <div class="flex items-center h-full flex-col gap-4 lg:gap-8 lg:w-[65rem] p-4 hidden">
         <h1 class="font-bold text-3xl">Redacción para blogs y copywriting</h1>
 
         <p class="whitespace-normal text-lg text-zinc-300 flex flex-col"><span>La redacción es un arte sin palabras que hará que tu marca brille con luz propia. Acompañada de un buen diseño y una buena estrategia esta será la parte más crucial de tu proyecto. </span><br> <span>En <span class="font-bold">Mariol Design</span> te ofrecemos redacciones para blogs sin importar el tamaño de los textos, además de que también le damos vida a las publicaciones de tus redes sociales con textos llamativos.</span></p>
     </div>
 
-    <div class=" flex flex-col gap-8">
+    <div class=" flex flex-col gap-8 hidden">
         <h1 class="font-bold text-2xl">Paquetes básicos de <span class="font-bold">redacción para blogs y copywriting</span></h1>
         <p class="italic">* Cada paquete es personalizable y puede variar el costo.</p>
 
@@ -191,7 +226,6 @@
   </div>
 
   <script src="/components/nav.js"></script>
-  <script src="index.js"></script>
 </body>
 
 </html>
