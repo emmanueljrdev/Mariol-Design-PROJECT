@@ -244,7 +244,7 @@ const isAdmin = (data) => {
             } else if (data.isApproved === true) {
               const requestList = document.createElement('li');
               requestList.id = data.id;
-              requestList.classList.add('bg-zinc-100', 'h-[105%]', 'rounded-md', 'shadow-md', 'p-4', 'py-4', 'flex', 'flex-col', 'justify-center', 'brief-data', 'lg:h-[125%]');
+              requestList.classList.add('bg-zinc-700', 'h-[105%]', 'rounded-md', 'shadow-md', 'p-4', 'py-4', 'flex', 'flex-col', 'justify-center', 'brief-data', 'lg:h-[125%]');
 
               requestList.innerHTML = 
               
