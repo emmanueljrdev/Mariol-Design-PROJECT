@@ -510,6 +510,7 @@ logOutBtn.forEach(element => {
   element.addEventListener('click', async e => {
 
     await axios.get('/api/logout');
+    console.log('funcionó');
     window.location.pathname = '/login';
 
   });
